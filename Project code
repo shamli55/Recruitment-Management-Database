@@ -1,0 +1,2125 @@
+CREATE DATABASE JobSphereDB;
+
+USE JobSphereDB;
+CREATE SCHEMA Recruitment;
+USE SCHEMA Recruitment;
+
+CREATE TABLE Companies
+(
+    CompanyID INTEGER IDENTITY(1,1),
+    CompanyName VARCHAR(100) NOT NULL,
+    Industry VARCHAR(100),
+    Location VARCHAR(100),
+    FoundedYear INTEGER,
+    Website VARCHAR(200),
+    Email VARCHAR(100),
+    Phone VARCHAR(20),
+    CompanySize VARCHAR(50),
+    CreatedDate DATE,
+
+    PRIMARY KEY (CompanyID)
+);
+DESC TABLE Companies;
+SELECT * FROM Companies;
+
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Tata Consultancy Services','FinTech','Chennai',1968,'https://www.tcs.com','company1@jobsphere.example','+91-90000-10000','Medium','2026-01-01');
+-- Company 2
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Infosys','E-Commerce','Bengaluru',1981,'https://www.infosys.com','company2@jobsphere.example','+91-90000-10001','Large','2026-02-02');
+-- Company 3
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Wipro','Healthcare','Hyderabad',1945,'https://www.wipro.com','company3@jobsphere.example','+91-90000-10002','Enterprise','2026-03-03');
+-- Company 4
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('HCLTech','EdTech','Pune',1976,'https://www.hcltech.com','company4@jobsphere.example','+91-90000-10003','Medium','2026-04-04');
+-- Company 5
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Accenture India','SaaS','Mumbai',1987,'https://www.accenture.com','company5@jobsphere.example','+91-90000-10004','Large','2026-05-05');
+-- Company 6
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Cognizant','Automotive','Delhi',1994,'https://www.cognizant.com','company6@jobsphere.example','+91-90000-10005','Enterprise','2026-06-06');
+-- Company 7
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Capgemini India','Telecom','Noida',1967,'https://www.capgemini.com','company7@jobsphere.example','+91-90000-10006','Medium','2026-07-07');
+-- Company 8
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Tech Mahindra','Retail','Gurugram',1986,'https://www.techmahindra.com','company8@jobsphere.example','+91-90000-10007','Large','2026-08-08');
+-- Company 9
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Deloitte India','Manufacturing','Kochi',1900,'https://www.deloitte.com','company9@jobsphere.example','+91-90000-10008','Enterprise','2026-09-09');
+-- Company 10
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Zoho','Media','Coimbatore',1996,'https://www.zoho.com','company10@jobsphere.example','+91-90000-10009','Medium','2026-10-10');
+-- Company 11
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Tata Consultancy Services - Division 2','FinTech','Chennai',1968,'https://www.tcs.com','company11@jobsphere.example','+91-90000-10010','Large','2026-11-11');
+-- Company 12
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Infosys - Division 2','E-Commerce','Bengaluru',1981,'https://www.infosys.com','company12@jobsphere.example','+91-90000-10011','Enterprise','2026-12-12');
+-- Company 13
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Wipro - Division 2','Healthcare','Hyderabad',1945,'https://www.wipro.com','company13@jobsphere.example','+91-90000-10012','Medium','2026-01-13');
+-- Company 14
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('HCLTech - Division 2','EdTech','Pune',1976,'https://www.hcltech.com','company14@jobsphere.example','+91-90000-10013','Large','2026-02-14');
+-- Company 15
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Accenture India - Division 2','SaaS','Mumbai',1987,'https://www.accenture.com','company15@jobsphere.example','+91-90000-10014','Enterprise','2026-03-15');
+-- Company 16
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Cognizant - Division 2','Automotive','Delhi',1994,'https://www.cognizant.com','company16@jobsphere.example','+91-90000-10015','Medium','2026-04-16');
+-- Company 17
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Capgemini India - Division 2','Telecom','Noida',1967,'https://www.capgemini.com','company17@jobsphere.example','+91-90000-10016','Large','2026-05-17');
+-- Company 18
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Tech Mahindra - Division 2','Retail','Gurugram',1986,'https://www.techmahindra.com','company18@jobsphere.example','+91-90000-10017','Enterprise','2026-06-18');
+-- Company 19
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Deloitte India - Division 2','Manufacturing','Kochi',1900,'https://www.deloitte.com','company19@jobsphere.example','+91-90000-10018','Medium','2026-07-19');
+-- Company 20
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Zoho - Division 2','Media','Coimbatore',1996,'https://www.zoho.com','company20@jobsphere.example','+91-90000-10019','Large','2026-08-20');
+-- Company 21
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Tata Consultancy Services - Division 3','FinTech','Chennai',1968,'https://www.tcs.com','company21@jobsphere.example','+91-90000-10020','Enterprise','2026-09-21');
+-- Company 22
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Infosys - Division 3','E-Commerce','Bengaluru',1981,'https://www.infosys.com','company22@jobsphere.example','+91-90000-10021','Medium','2026-10-22');
+-- Company 23
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Wipro - Division 3','Healthcare','Hyderabad',1945,'https://www.wipro.com','company23@jobsphere.example','+91-90000-10022','Large','2026-11-23');
+-- Company 24
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('HCLTech - Division 3','EdTech','Pune',1976,'https://www.hcltech.com','company24@jobsphere.example','+91-90000-10023','Enterprise','2026-12-24');
+-- Company 25
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Accenture India - Division 3','SaaS','Mumbai',1987,'https://www.accenture.com','company25@jobsphere.example','+91-90000-10024','Medium','2026-01-25');
+-- Company 26
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Cognizant - Division 3','Automotive','Delhi',1994,'https://www.cognizant.com','company26@jobsphere.example','+91-90000-10025','Large','2026-02-26');
+-- Company 27
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Capgemini India - Division 3','Telecom','Noida',1967,'https://www.capgemini.com','company27@jobsphere.example','+91-90000-10026','Enterprise','2026-03-27');
+-- Company 28
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Tech Mahindra - Division 3','Retail','Gurugram',1986,'https://www.techmahindra.com','company28@jobsphere.example','+91-90000-10027','Medium','2026-04-28');
+-- Company 29
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Deloitte India - Division 3','Manufacturing','Kochi',1900,'https://www.deloitte.com','company29@jobsphere.example','+91-90000-10028','Large','2026-05-01');
+-- Company 30
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Zoho - Division 3','Media','Coimbatore',1996,'https://www.zoho.com','company30@jobsphere.example','+91-90000-10029','Enterprise','2026-06-02');
+-- Company 31
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Tata Consultancy Services - Division 4','FinTech','Chennai',1968,'https://www.tcs.com','company31@jobsphere.example','+91-90000-10030','Medium','2026-07-03');
+-- Company 32
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Infosys - Division 4','E-Commerce','Bengaluru',1981,'https://www.infosys.com','company32@jobsphere.example','+91-90000-10031','Large','2026-08-04');
+-- Company 33
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Wipro - Division 4','Healthcare','Hyderabad',1945,'https://www.wipro.com','company33@jobsphere.example','+91-90000-10032','Enterprise','2026-09-05');
+-- Company 34
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('HCLTech - Division 4','EdTech','Pune',1976,'https://www.hcltech.com','company34@jobsphere.example','+91-90000-10033','Medium','2026-10-06');
+-- Company 35
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Accenture India - Division 4','SaaS','Mumbai',1987,'https://www.accenture.com','company35@jobsphere.example','+91-90000-10034','Large','2026-11-07');
+-- Company 36
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Cognizant - Division 4','Automotive','Delhi',1994,'https://www.cognizant.com','company36@jobsphere.example','+91-90000-10035','Enterprise','2026-12-08');
+-- Company 37
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Capgemini India - Division 4','Telecom','Noida',1967,'https://www.capgemini.com','company37@jobsphere.example','+91-90000-10036','Medium','2026-01-09');
+-- Company 38
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Tech Mahindra - Division 4','Retail','Gurugram',1986,'https://www.techmahindra.com','company38@jobsphere.example','+91-90000-10037','Large','2026-02-10');
+-- Company 39
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Deloitte India - Division 4','Manufacturing','Kochi',1900,'https://www.deloitte.com','company39@jobsphere.example','+91-90000-10038','Enterprise','2026-03-11');
+-- Company 40
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Zoho - Division 4','Media','Coimbatore',1996,'https://www.zoho.com','company40@jobsphere.example','+91-90000-10039','Medium','2026-04-12');
+-- Company 41
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Tata Consultancy Services - Division 5','FinTech','Chennai',1968,'https://www.tcs.com','company41@jobsphere.example','+91-90000-10040','Large','2026-05-13');
+-- Company 42
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Infosys - Division 5','E-Commerce','Bengaluru',1981,'https://www.infosys.com','company42@jobsphere.example','+91-90000-10041','Enterprise','2026-06-14');
+-- Company 43
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Wipro - Division 5','Healthcare','Hyderabad',1945,'https://www.wipro.com','company43@jobsphere.example','+91-90000-10042','Medium','2026-07-15');
+-- Company 44
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('HCLTech - Division 5','EdTech','Pune',1976,'https://www.hcltech.com','company44@jobsphere.example','+91-90000-10043','Large','2026-08-16');
+-- Company 45
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Accenture India - Division 5','SaaS','Mumbai',1987,'https://www.accenture.com','company45@jobsphere.example','+91-90000-10044','Enterprise','2026-09-17');
+-- Company 46
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Cognizant - Division 5','Automotive','Delhi',1994,'https://www.cognizant.com','company46@jobsphere.example','+91-90000-10045','Medium','2026-10-18');
+-- Company 47
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Capgemini India - Division 5','Telecom','Noida',1967,'https://www.capgemini.com','company47@jobsphere.example','+91-90000-10046','Large','2026-11-19');
+-- Company 48
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Tech Mahindra - Division 5','Retail','Gurugram',1986,'https://www.techmahindra.com','company48@jobsphere.example','+91-90000-10047','Enterprise','2026-12-20');
+-- Company 49
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Deloitte India - Division 5','Manufacturing','Kochi',1900,'https://www.deloitte.com','company49@jobsphere.example','+91-90000-10048','Medium','2026-01-21');
+-- Company 50
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Zoho - Division 5','Media','Coimbatore',1996,'https://www.zoho.com','company50@jobsphere.example','+91-90000-10049','Large','2026-02-22');
+-- Company 51
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Tata Consultancy Services - Division 6','FinTech','Chennai',1968,'https://www.tcs.com','company51@jobsphere.example','+91-90000-10050','Enterprise','2026-03-23');
+-- Company 52
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Infosys - Division 6','E-Commerce','Bengaluru',1981,'https://www.infosys.com','company52@jobsphere.example','+91-90000-10051','Medium','2026-04-24');
+-- Company 53
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Wipro - Division 6','Healthcare','Hyderabad',1945,'https://www.wipro.com','company53@jobsphere.example','+91-90000-10052','Large','2026-05-25');
+-- Company 54
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('HCLTech - Division 6','EdTech','Pune',1976,'https://www.hcltech.com','company54@jobsphere.example','+91-90000-10053','Enterprise','2026-06-26');
+-- Company 55
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Accenture India - Division 6','SaaS','Mumbai',1987,'https://www.accenture.com','company55@jobsphere.example','+91-90000-10054','Medium','2026-07-27');
+-- Company 56
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Cognizant - Division 6','Automotive','Delhi',1994,'https://www.cognizant.com','company56@jobsphere.example','+91-90000-10055','Large','2026-08-28');
+-- Company 57
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Capgemini India - Division 6','Telecom','Noida',1967,'https://www.capgemini.com','company57@jobsphere.example','+91-90000-10056','Enterprise','2026-09-01');
+-- Company 58
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Tech Mahindra - Division 6','Retail','Gurugram',1986,'https://www.techmahindra.com','company58@jobsphere.example','+91-90000-10057','Medium','2026-10-02');
+-- Company 59
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Deloitte India - Division 6','Manufacturing','Kochi',1900,'https://www.deloitte.com','company59@jobsphere.example','+91-90000-10058','Large','2026-11-03');
+-- Company 60
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Zoho - Division 6','Media','Coimbatore',1996,'https://www.zoho.com','company60@jobsphere.example','+91-90000-10059','Enterprise','2026-12-04');
+-- Company 61
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Tata Consultancy Services - Division 7','FinTech','Chennai',1968,'https://www.tcs.com','company61@jobsphere.example','+91-90000-10060','Medium','2026-01-05');
+-- Company 62
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Infosys - Division 7','E-Commerce','Bengaluru',1981,'https://www.infosys.com','company62@jobsphere.example','+91-90000-10061','Large','2026-02-06');
+-- Company 63
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Wipro - Division 7','Healthcare','Hyderabad',1945,'https://www.wipro.com','company63@jobsphere.example','+91-90000-10062','Enterprise','2026-03-07');
+-- Company 64
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('HCLTech - Division 7','EdTech','Pune',1976,'https://www.hcltech.com','company64@jobsphere.example','+91-90000-10063','Medium','2026-04-08');
+-- Company 65
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Accenture India - Division 7','SaaS','Mumbai',1987,'https://www.accenture.com','company65@jobsphere.example','+91-90000-10064','Large','2026-05-09');
+-- Company 66
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Cognizant - Division 7','Automotive','Delhi',1994,'https://www.cognizant.com','company66@jobsphere.example','+91-90000-10065','Enterprise','2026-06-10');
+-- Company 67
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Capgemini India - Division 7','Telecom','Noida',1967,'https://www.capgemini.com','company67@jobsphere.example','+91-90000-10066','Medium','2026-07-11');
+-- Company 68
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Tech Mahindra - Division 7','Retail','Gurugram',1986,'https://www.techmahindra.com','company68@jobsphere.example','+91-90000-10067','Large','2026-08-12');
+-- Company 69
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Deloitte India - Division 7','Manufacturing','Kochi',1900,'https://www.deloitte.com','company69@jobsphere.example','+91-90000-10068','Enterprise','2026-09-13');
+-- Company 70
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Zoho - Division 7','Media','Coimbatore',1996,'https://www.zoho.com','company70@jobsphere.example','+91-90000-10069','Medium','2026-10-14');
+-- Company 71
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Tata Consultancy Services - Division 8','FinTech','Chennai',1968,'https://www.tcs.com','company71@jobsphere.example','+91-90000-10070','Large','2026-11-15');
+-- Company 72
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Infosys - Division 8','E-Commerce','Bengaluru',1981,'https://www.infosys.com','company72@jobsphere.example','+91-90000-10071','Enterprise','2026-12-16');
+-- Company 73
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Wipro - Division 8','Healthcare','Hyderabad',1945,'https://www.wipro.com','company73@jobsphere.example','+91-90000-10072','Medium','2026-01-17');
+-- Company 74
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('HCLTech - Division 8','EdTech','Pune',1976,'https://www.hcltech.com','company74@jobsphere.example','+91-90000-10073','Large','2026-02-18');
+-- Company 75
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Accenture India - Division 8','SaaS','Mumbai',1987,'https://www.accenture.com','company75@jobsphere.example','+91-90000-10074','Enterprise','2026-03-19');
+-- Company 76
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Cognizant - Division 8','Automotive','Delhi',1994,'https://www.cognizant.com','company76@jobsphere.example','+91-90000-10075','Medium','2026-04-20');
+-- Company 77
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Capgemini India - Division 8','Telecom','Noida',1967,'https://www.capgemini.com','company77@jobsphere.example','+91-90000-10076','Large','2026-05-21');
+-- Company 78
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Tech Mahindra - Division 8','Retail','Gurugram',1986,'https://www.techmahindra.com','company78@jobsphere.example','+91-90000-10077','Enterprise','2026-06-22');
+-- Company 79
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Deloitte India - Division 8','Manufacturing','Kochi',1900,'https://www.deloitte.com','company79@jobsphere.example','+91-90000-10078','Medium','2026-07-23');
+-- Company 80
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Zoho - Division 8','Media','Coimbatore',1996,'https://www.zoho.com','company80@jobsphere.example','+91-90000-10079','Large','2026-08-24');
+-- Company 81
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Tata Consultancy Services - Division 9','FinTech','Chennai',1968,'https://www.tcs.com','company81@jobsphere.example','+91-90000-10080','Enterprise','2026-09-25');
+-- Company 82
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Infosys - Division 9','E-Commerce','Bengaluru',1981,'https://www.infosys.com','company82@jobsphere.example','+91-90000-10081','Medium','2026-10-26');
+-- Company 83
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Wipro - Division 9','Healthcare','Hyderabad',1945,'https://www.wipro.com','company83@jobsphere.example','+91-90000-10082','Large','2026-11-27');
+-- Company 84
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('HCLTech - Division 9','EdTech','Pune',1976,'https://www.hcltech.com','company84@jobsphere.example','+91-90000-10083','Enterprise','2026-12-28');
+-- Company 85
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Accenture India - Division 9','SaaS','Mumbai',1987,'https://www.accenture.com','company85@jobsphere.example','+91-90000-10084','Medium','2026-01-01');
+-- Company 86
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Cognizant - Division 9','Automotive','Delhi',1994,'https://www.cognizant.com','company86@jobsphere.example','+91-90000-10085','Large','2026-02-02');
+-- Company 87
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Capgemini India - Division 9','Telecom','Noida',1967,'https://www.capgemini.com','company87@jobsphere.example','+91-90000-10086','Enterprise','2026-03-03');
+-- Company 88
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Tech Mahindra - Division 9','Retail','Gurugram',1986,'https://www.techmahindra.com','company88@jobsphere.example','+91-90000-10087','Medium','2026-04-04');
+-- Company 89
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Deloitte India - Division 9','Manufacturing','Kochi',1900,'https://www.deloitte.com','company89@jobsphere.example','+91-90000-10088','Large','2026-05-05');
+-- Company 90
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Zoho - Division 9','Media','Coimbatore',1996,'https://www.zoho.com','company90@jobsphere.example','+91-90000-10089','Enterprise','2026-06-06');
+-- Company 91
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Tata Consultancy Services - Division 10','FinTech','Chennai',1968,'https://www.tcs.com','company91@jobsphere.example','+91-90000-10090','Medium','2026-07-07');
+-- Company 92
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Infosys - Division 10','E-Commerce','Bengaluru',1981,'https://www.infosys.com','company92@jobsphere.example','+91-90000-10091','Large','2026-08-08');
+-- Company 93
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Wipro - Division 10','Healthcare','Hyderabad',1945,'https://www.wipro.com','company93@jobsphere.example','+91-90000-10092','Enterprise','2026-09-09');
+-- Company 94
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('HCLTech - Division 10','EdTech','Pune',1976,'https://www.hcltech.com','company94@jobsphere.example','+91-90000-10093','Medium','2026-10-10');
+-- Company 95
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Accenture India - Division 10','SaaS','Mumbai',1987,'https://www.accenture.com','company95@jobsphere.example','+91-90000-10094','Large','2026-11-11');
+-- Company 96
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Cognizant - Division 10','Automotive','Delhi',1994,'https://www.cognizant.com','company96@jobsphere.example','+91-90000-10095','Enterprise','2026-12-12');
+-- Company 97
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Capgemini India - Division 10','Telecom','Noida',1967,'https://www.capgemini.com','company97@jobsphere.example','+91-90000-10096','Medium','2026-01-13');
+-- Company 98
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Tech Mahindra - Division 10','Retail','Gurugram',1986,'https://www.techmahindra.com','company98@jobsphere.example','+91-90000-10097','Large','2026-02-14');
+-- Company 99
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Deloitte India - Division 10','Manufacturing','Kochi',1900,'https://www.deloitte.com','company99@jobsphere.example','+91-90000-10098','Enterprise','2026-03-15');
+-- Company 100
+INSERT INTO Companies (CompanyName,Industry,Location,FoundedYear,Website,Email,Phone,CompanySize,CreatedDate)
+VALUES ('Zoho - Division 10','Media','Coimbatore',1996,'https://www.zoho.com','company100@jobsphere.example','+91-90000-10099','Medium','2026-04-16');
+
+
+CREATE TABLE Recruiters
+(
+    RecruiterID INTEGER IDENTITY(1,1),
+    CompanyID INTEGER,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    Email VARCHAR(100),
+    Phone VARCHAR(20),
+    Designation VARCHAR(100),
+    Experience INTEGER,
+
+    PRIMARY KEY (RecruiterID)
+);
+
+INSERT INTO Recruiters (CompanyID,FirstName,LastName,Email,Phone,Designation,Experience)
+VALUES
+(1,'Aarav','Sharma','aarav.sharma1@jobsphere.example','+91-91000-10000','Senior Recruiter',2),
+(2,'Vivaan','Singh','vivaan.singh2@jobsphere.example','+91-91000-10001','Talent Acquisition Specialist',3),
+(3,'Aditya','Nair','aditya.nair3@jobsphere.example','+91-91000-10002','HR Manager',4),
+(4,'Arjun','Joshi','arjun.joshi4@jobsphere.example','+91-91000-10003','Technical Recruiter',5),
+(5,'Rahul','Mishra','rahul.mishra5@jobsphere.example','+91-91000-10004','Senior Recruiter',6),
+(6,'Karthik','Bose','karthik.bose6@jobsphere.example','+91-91000-10005','Talent Acquisition Specialist',7),
+(7,'Rohan','Kapoor','rohan.kapoor7@jobsphere.example','+91-91000-10006','HR Manager',8),
+(8,'Vikram','Patel','vikram.patel8@jobsphere.example','+91-91000-10007','Technical Recruiter',9),
+(9,'Sanjay','Iyer','sanjay.iyer9@jobsphere.example','+91-91000-10008','Senior Recruiter',10),
+(10,'Naveen','Menon','naveen.menon10@jobsphere.example','+91-91000-10009','Talent Acquisition Specialist',11),
+(11,'Ananya','Rao','ananya.rao11@jobsphere.example','+91-91000-10010','HR Manager',12),
+(12,'Diya','Verma','diya.verma12@jobsphere.example','+91-91000-10011','Technical Recruiter',2),
+(13,'Ishita','Shah','ishita.shah13@jobsphere.example','+91-91000-10012','Senior Recruiter',3),
+(14,'Priya','Srinivasan','priya.srinivasan14@jobsphere.example','+91-91000-10013','Talent Acquisition Specialist',4),
+(15,'Meera','Kumar','meera.kumar15@jobsphere.example','+91-91000-10014','HR Manager',5),
+(16,'Kavya','Reddy','kavya.reddy16@jobsphere.example','+91-91000-10015','Technical Recruiter',6),
+(17,'Sneha','Gupta','sneha.gupta17@jobsphere.example','+91-91000-10016','Senior Recruiter',7),
+(18,'Aishwarya','Das','aishwarya.das18@jobsphere.example','+91-91000-10017','Talent Acquisition Specialist',8),
+(19,'Nandhini','Pillai','nandhini.pillai19@jobsphere.example','+91-91000-10018','HR Manager',9),
+(20,'Divya','Mehta','divya.mehta20@jobsphere.example','+91-91000-10019','Technical Recruiter',10),
+(21,'Aarav','Sharma','aarav.sharma21@jobsphere.example','+91-91000-10020','Senior Recruiter',11),
+(22,'Vivaan','Singh','vivaan.singh22@jobsphere.example','+91-91000-10021','Talent Acquisition Specialist',12),
+(23,'Aditya','Nair','aditya.nair23@jobsphere.example','+91-91000-10022','HR Manager',2),
+(24,'Arjun','Joshi','arjun.joshi24@jobsphere.example','+91-91000-10023','Technical Recruiter',3),
+(25,'Rahul','Mishra','rahul.mishra25@jobsphere.example','+91-91000-10024','Senior Recruiter',4),
+(26,'Karthik','Bose','karthik.bose26@jobsphere.example','+91-91000-10025','Talent Acquisition Specialist',5),
+(27,'Rohan','Kapoor','rohan.kapoor27@jobsphere.example','+91-91000-10026','HR Manager',6),
+(28,'Vikram','Patel','vikram.patel28@jobsphere.example','+91-91000-10027','Technical Recruiter',7),
+(29,'Sanjay','Iyer','sanjay.iyer29@jobsphere.example','+91-91000-10028','Senior Recruiter',8),
+(30,'Naveen','Menon','naveen.menon30@jobsphere.example','+91-91000-10029','Talent Acquisition Specialist',9),
+(31,'Ananya','Rao','ananya.rao31@jobsphere.example','+91-91000-10030','HR Manager',10),
+(32,'Diya','Verma','diya.verma32@jobsphere.example','+91-91000-10031','Technical Recruiter',11),
+(33,'Ishita','Shah','ishita.shah33@jobsphere.example','+91-91000-10032','Senior Recruiter',12),
+(34,'Priya','Srinivasan','priya.srinivasan34@jobsphere.example','+91-91000-10033','Talent Acquisition Specialist',2),
+(35,'Meera','Kumar','meera.kumar35@jobsphere.example','+91-91000-10034','HR Manager',3),
+(36,'Kavya','Reddy','kavya.reddy36@jobsphere.example','+91-91000-10035','Technical Recruiter',4),
+(37,'Sneha','Gupta','sneha.gupta37@jobsphere.example','+91-91000-10036','Senior Recruiter',5),
+(38,'Aishwarya','Das','aishwarya.das38@jobsphere.example','+91-91000-10037','Talent Acquisition Specialist',6),
+(39,'Nandhini','Pillai','nandhini.pillai39@jobsphere.example','+91-91000-10038','HR Manager',7),
+(40,'Divya','Mehta','divya.mehta40@jobsphere.example','+91-91000-10039','Technical Recruiter',8),
+(41,'Aarav','Sharma','aarav.sharma41@jobsphere.example','+91-91000-10040','Senior Recruiter',9),
+(42,'Vivaan','Singh','vivaan.singh42@jobsphere.example','+91-91000-10041','Talent Acquisition Specialist',10),
+(43,'Aditya','Nair','aditya.nair43@jobsphere.example','+91-91000-10042','HR Manager',11),
+(44,'Arjun','Joshi','arjun.joshi44@jobsphere.example','+91-91000-10043','Technical Recruiter',12),
+(45,'Rahul','Mishra','rahul.mishra45@jobsphere.example','+91-91000-10044','Senior Recruiter',2),
+(46,'Karthik','Bose','karthik.bose46@jobsphere.example','+91-91000-10045','Talent Acquisition Specialist',3),
+(47,'Rohan','Kapoor','rohan.kapoor47@jobsphere.example','+91-91000-10046','HR Manager',4),
+(48,'Vikram','Patel','vikram.patel48@jobsphere.example','+91-91000-10047','Technical Recruiter',5),
+(49,'Sanjay','Iyer','sanjay.iyer49@jobsphere.example','+91-91000-10048','Senior Recruiter',6),
+(50,'Naveen','Menon','naveen.menon50@jobsphere.example','+91-91000-10049','Talent Acquisition Specialist',7),
+(51,'Ananya','Rao','ananya.rao51@jobsphere.example','+91-91000-10050','HR Manager',8),
+(52,'Diya','Verma','diya.verma52@jobsphere.example','+91-91000-10051','Technical Recruiter',9),
+(53,'Ishita','Shah','ishita.shah53@jobsphere.example','+91-91000-10052','Senior Recruiter',10),
+(54,'Priya','Srinivasan','priya.srinivasan54@jobsphere.example','+91-91000-10053','Talent Acquisition Specialist',11),
+(55,'Meera','Kumar','meera.kumar55@jobsphere.example','+91-91000-10054','HR Manager',12),
+(56,'Kavya','Reddy','kavya.reddy56@jobsphere.example','+91-91000-10055','Technical Recruiter',2),
+(57,'Sneha','Gupta','sneha.gupta57@jobsphere.example','+91-91000-10056','Senior Recruiter',3),
+(58,'Aishwarya','Das','aishwarya.das58@jobsphere.example','+91-91000-10057','Talent Acquisition Specialist',4),
+(59,'Nandhini','Pillai','nandhini.pillai59@jobsphere.example','+91-91000-10058','HR Manager',5),
+(60,'Divya','Mehta','divya.mehta60@jobsphere.example','+91-91000-10059','Technical Recruiter',6),
+(61,'Aarav','Sharma','aarav.sharma61@jobsphere.example','+91-91000-10060','Senior Recruiter',7),
+(62,'Vivaan','Singh','vivaan.singh62@jobsphere.example','+91-91000-10061','Talent Acquisition Specialist',8),
+(63,'Aditya','Nair','aditya.nair63@jobsphere.example','+91-91000-10062','HR Manager',9),
+(64,'Arjun','Joshi','arjun.joshi64@jobsphere.example','+91-91000-10063','Technical Recruiter',10),
+(65,'Rahul','Mishra','rahul.mishra65@jobsphere.example','+91-91000-10064','Senior Recruiter',11),
+(66,'Karthik','Bose','karthik.bose66@jobsphere.example','+91-91000-10065','Talent Acquisition Specialist',12),
+(67,'Rohan','Kapoor','rohan.kapoor67@jobsphere.example','+91-91000-10066','HR Manager',2),
+(68,'Vikram','Patel','vikram.patel68@jobsphere.example','+91-91000-10067','Technical Recruiter',3),
+(69,'Sanjay','Iyer','sanjay.iyer69@jobsphere.example','+91-91000-10068','Senior Recruiter',4),
+(70,'Naveen','Menon','naveen.menon70@jobsphere.example','+91-91000-10069','Talent Acquisition Specialist',5),
+(71,'Ananya','Rao','ananya.rao71@jobsphere.example','+91-91000-10070','HR Manager',6),
+(72,'Diya','Verma','diya.verma72@jobsphere.example','+91-91000-10071','Technical Recruiter',7),
+(73,'Ishita','Shah','ishita.shah73@jobsphere.example','+91-91000-10072','Senior Recruiter',8),
+(74,'Priya','Srinivasan','priya.srinivasan74@jobsphere.example','+91-91000-10073','Talent Acquisition Specialist',9),
+(75,'Meera','Kumar','meera.kumar75@jobsphere.example','+91-91000-10074','HR Manager',10),
+(76,'Kavya','Reddy','kavya.reddy76@jobsphere.example','+91-91000-10075','Technical Recruiter',11),
+(77,'Sneha','Gupta','sneha.gupta77@jobsphere.example','+91-91000-10076','Senior Recruiter',12),
+(78,'Aishwarya','Das','aishwarya.das78@jobsphere.example','+91-91000-10077','Talent Acquisition Specialist',2),
+(79,'Nandhini','Pillai','nandhini.pillai79@jobsphere.example','+91-91000-10078','HR Manager',3),
+(80,'Divya','Mehta','divya.mehta80@jobsphere.example','+91-91000-10079','Technical Recruiter',4),
+(81,'Aarav','Sharma','aarav.sharma81@jobsphere.example','+91-91000-10080','Senior Recruiter',5),
+(82,'Vivaan','Singh','vivaan.singh82@jobsphere.example','+91-91000-10081','Talent Acquisition Specialist',6),
+(83,'Aditya','Nair','aditya.nair83@jobsphere.example','+91-91000-10082','HR Manager',7),
+(84,'Arjun','Joshi','arjun.joshi84@jobsphere.example','+91-91000-10083','Technical Recruiter',8),
+(85,'Rahul','Mishra','rahul.mishra85@jobsphere.example','+91-91000-10084','Senior Recruiter',9),
+(86,'Karthik','Bose','karthik.bose86@jobsphere.example','+91-91000-10085','Talent Acquisition Specialist',10),
+(87,'Rohan','Kapoor','rohan.kapoor87@jobsphere.example','+91-91000-10086','HR Manager',11),
+(88,'Vikram','Patel','vikram.patel88@jobsphere.example','+91-91000-10087','Technical Recruiter',12),
+(89,'Sanjay','Iyer','sanjay.iyer89@jobsphere.example','+91-91000-10088','Senior Recruiter',2),
+(90,'Naveen','Menon','naveen.menon90@jobsphere.example','+91-91000-10089','Talent Acquisition Specialist',3),
+(91,'Ananya','Rao','ananya.rao91@jobsphere.example','+91-91000-10090','HR Manager',4),
+(92,'Diya','Verma','diya.verma92@jobsphere.example','+91-91000-10091','Technical Recruiter',5),
+(93,'Ishita','Shah','ishita.shah93@jobsphere.example','+91-91000-10092','Senior Recruiter',6),
+(94,'Priya','Srinivasan','priya.srinivasan94@jobsphere.example','+91-91000-10093','Talent Acquisition Specialist',7),
+(95,'Meera','Kumar','meera.kumar95@jobsphere.example','+91-91000-10094','HR Manager',8),
+(96,'Kavya','Reddy','kavya.reddy96@jobsphere.example','+91-91000-10095','Technical Recruiter',9),
+(97,'Sneha','Gupta','sneha.gupta97@jobsphere.example','+91-91000-10096','Senior Recruiter',10),
+(98,'Aishwarya','Das','aishwarya.das98@jobsphere.example','+91-91000-10097','Talent Acquisition Specialist',11),
+(99,'Nandhini','Pillai','nandhini.pillai99@jobsphere.example','+91-91000-10098','HR Manager',12),
+(100,'Divya','Mehta','divya.mehta100@jobsphere.example','+91-91000-10099','Technical Recruiter',2);
+
+
+CREATE TABLE Candidates
+(
+    CandidateID INTEGER IDENTITY(1,1),
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    Gender VARCHAR(20),
+    DOB DATE,
+    Email VARCHAR(100),
+    Phone VARCHAR(20),
+    City VARCHAR(100),
+    State VARCHAR(100),
+    HighestQualification VARCHAR(100),
+    ExperienceYears NUMBER(4,1),
+    CurrentSalary NUMBER(10,2),
+    ExpectedSalary NUMBER(10,2),
+
+    PRIMARY KEY (CandidateID)
+);
+
+INSERT INTO Candidates (FirstName,LastName,Gender,DOB,Email,Phone,City,State,HighestQualification,ExperienceYears,CurrentSalary,ExpectedSalary)
+VALUES
+('Karthik','Menon','Male','1994-01-01','candidate1@jobsphere.example','+91-92000-10000','Chennai','Tamil Nadu','B.Tech Computer Science',0.0,350000,450000),
+('Rohan','Gupta','Female','1995-02-02','candidate2@jobsphere.example','+91-92000-10001','Bengaluru','Karnataka','B.Tech AI & Data Science',0.5,425000,575000),
+('Vikram','Joshi','Male','1996-03-03','candidate3@jobsphere.example','+91-92000-10002','Hyderabad','Telangana','B.E. Information Technology',1.0,500000,700000),
+('Sanjay','Rao','Female','1997-04-04','candidate4@jobsphere.example','+91-92000-10003','Pune','Maharashtra','MCA',1.5,575000,825000),
+('Naveen','Das','Male','1998-05-05','candidate5@jobsphere.example','+91-92000-10004','Mumbai','Delhi','B.Sc Computer Science',2.0,650000,950000),
+('Ananya','Mishra','Female','1999-06-06','candidate6@jobsphere.example','+91-92000-10005','Delhi','Uttar Pradesh','MBA HR',2.5,725000,825000),
+('Diya','Verma','Male','2000-07-07','candidate7@jobsphere.example','+91-92000-10006','Noida','Haryana','B.Tech Computer Science',3.0,800000,950000),
+('Ishita','Pillai','Female','2001-08-08','candidate8@jobsphere.example','+91-92000-10007','Gurugram','Kerala','B.Tech AI & Data Science',3.5,875000,1075000),
+('Priya','Bose','Male','2002-09-09','candidate9@jobsphere.example','+91-92000-10008','Kochi','Tamil Nadu','B.E. Information Technology',4.0,950000,1200000),
+('Meera','Shah','Female','2003-10-10','candidate10@jobsphere.example','+91-92000-10009','Coimbatore','Karnataka','MCA',0.0,1025000,1325000),
+('Kavya','Mehta','Male','1994-11-11','candidate11@jobsphere.example','+91-92000-10010','Chennai','Telangana','B.Sc Computer Science',0.5,1100000,1200000),
+('Sneha','Kapoor','Female','1995-12-12','candidate12@jobsphere.example','+91-92000-10011','Bengaluru','Maharashtra','MBA HR',1.0,1175000,1325000),
+('Aishwarya','Srinivasan','Male','1996-01-13','candidate13@jobsphere.example','+91-92000-10012','Hyderabad','Delhi','B.Tech Computer Science',1.5,350000,550000),
+('Nandhini','Sharma','Female','1997-02-14','candidate14@jobsphere.example','+91-92000-10013','Pune','Uttar Pradesh','B.Tech AI & Data Science',2.0,425000,675000),
+('Divya','Patel','Male','1998-03-15','candidate15@jobsphere.example','+91-92000-10014','Mumbai','Haryana','B.E. Information Technology',2.5,500000,800000),
+('Aarav','Kumar','Female','1999-04-16','candidate16@jobsphere.example','+91-92000-10015','Delhi','Kerala','MCA',3.0,575000,675000),
+('Vivaan','Singh','Male','2000-05-17','candidate17@jobsphere.example','+91-92000-10016','Noida','Tamil Nadu','B.Sc Computer Science',3.5,650000,800000),
+('Aditya','Iyer','Female','2001-06-18','candidate18@jobsphere.example','+91-92000-10017','Gurugram','Karnataka','MBA HR',4.0,725000,925000),
+('Arjun','Reddy','Male','2002-07-19','candidate19@jobsphere.example','+91-92000-10018','Kochi','Telangana','B.Tech Computer Science',0.0,800000,1050000),
+('Rahul','Nair','Female','2003-08-20','candidate20@jobsphere.example','+91-92000-10019','Coimbatore','Maharashtra','B.Tech AI & Data Science',0.5,875000,1175000),
+('Karthik','Menon','Male','1994-09-21','candidate21@jobsphere.example','+91-92000-10020','Chennai','Delhi','B.E. Information Technology',1.0,950000,1050000),
+('Rohan','Gupta','Female','1995-10-22','candidate22@jobsphere.example','+91-92000-10021','Bengaluru','Uttar Pradesh','MCA',1.5,1025000,1175000),
+('Vikram','Joshi','Male','1996-11-23','candidate23@jobsphere.example','+91-92000-10022','Hyderabad','Haryana','B.Sc Computer Science',2.0,1100000,1300000),
+('Sanjay','Rao','Female','1997-12-24','candidate24@jobsphere.example','+91-92000-10023','Pune','Kerala','MBA HR',2.5,1175000,1425000),
+('Naveen','Das','Male','1998-01-25','candidate25@jobsphere.example','+91-92000-10024','Mumbai','Tamil Nadu','B.Tech Computer Science',3.0,350000,650000),
+('Ananya','Mishra','Female','1999-02-26','candidate26@jobsphere.example','+91-92000-10025','Delhi','Karnataka','B.Tech AI & Data Science',3.5,425000,525000),
+('Diya','Verma','Male','2000-03-27','candidate27@jobsphere.example','+91-92000-10026','Noida','Telangana','B.E. Information Technology',4.0,500000,650000),
+('Ishita','Pillai','Female','2001-04-01','candidate28@jobsphere.example','+91-92000-10027','Gurugram','Maharashtra','MCA',0.0,575000,775000),
+('Priya','Bose','Male','2002-05-02','candidate29@jobsphere.example','+91-92000-10028','Kochi','Delhi','B.Sc Computer Science',0.5,650000,900000),
+('Meera','Shah','Female','2003-06-03','candidate30@jobsphere.example','+91-92000-10029','Coimbatore','Uttar Pradesh','MBA HR',1.0,725000,1025000),
+('Kavya','Mehta','Male','1994-07-04','candidate31@jobsphere.example','+91-92000-10030','Chennai','Haryana','B.Tech Computer Science',1.5,800000,900000),
+('Sneha','Kapoor','Female','1995-08-05','candidate32@jobsphere.example','+91-92000-10031','Bengaluru','Kerala','B.Tech AI & Data Science',2.0,875000,1025000),
+('Aishwarya','Srinivasan','Male','1996-09-06','candidate33@jobsphere.example','+91-92000-10032','Hyderabad','Tamil Nadu','B.E. Information Technology',2.5,950000,1150000),
+('Nandhini','Sharma','Female','1997-10-07','candidate34@jobsphere.example','+91-92000-10033','Pune','Karnataka','MCA',3.0,1025000,1275000),
+('Divya','Patel','Male','1998-11-08','candidate35@jobsphere.example','+91-92000-10034','Mumbai','Telangana','B.Sc Computer Science',3.5,1100000,1400000),
+('Aarav','Kumar','Female','1999-12-09','candidate36@jobsphere.example','+91-92000-10035','Delhi','Maharashtra','MBA HR',4.0,1175000,1275000),
+('Vivaan','Singh','Male','2000-01-10','candidate37@jobsphere.example','+91-92000-10036','Noida','Delhi','B.Tech Computer Science',0.0,350000,500000),
+('Aditya','Iyer','Female','2001-02-11','candidate38@jobsphere.example','+91-92000-10037','Gurugram','Uttar Pradesh','B.Tech AI & Data Science',0.5,425000,625000),
+('Arjun','Reddy','Male','2002-03-12','candidate39@jobsphere.example','+91-92000-10038','Kochi','Haryana','B.E. Information Technology',1.0,500000,750000),
+('Rahul','Nair','Female','2003-04-13','candidate40@jobsphere.example','+91-92000-10039','Coimbatore','Kerala','MCA',1.5,575000,875000),
+('Karthik','Menon','Male','1994-05-14','candidate41@jobsphere.example','+91-92000-10040','Chennai','Tamil Nadu','B.Sc Computer Science',2.0,650000,750000),
+('Rohan','Gupta','Female','1995-06-15','candidate42@jobsphere.example','+91-92000-10041','Bengaluru','Karnataka','MBA HR',2.5,725000,875000),
+('Vikram','Joshi','Male','1996-07-16','candidate43@jobsphere.example','+91-92000-10042','Hyderabad','Telangana','B.Tech Computer Science',3.0,800000,1000000),
+('Sanjay','Rao','Female','1997-08-17','candidate44@jobsphere.example','+91-92000-10043','Pune','Maharashtra','B.Tech AI & Data Science',3.5,875000,1125000),
+('Naveen','Das','Male','1998-09-18','candidate45@jobsphere.example','+91-92000-10044','Mumbai','Delhi','B.E. Information Technology',4.0,950000,1250000),
+('Ananya','Mishra','Female','1999-10-19','candidate46@jobsphere.example','+91-92000-10045','Delhi','Uttar Pradesh','MCA',0.0,1025000,1125000),
+('Diya','Verma','Male','2000-11-20','candidate47@jobsphere.example','+91-92000-10046','Noida','Haryana','B.Sc Computer Science',0.5,1100000,1250000),
+('Ishita','Pillai','Female','2001-12-21','candidate48@jobsphere.example','+91-92000-10047','Gurugram','Kerala','MBA HR',1.0,1175000,1375000),
+('Priya','Bose','Male','2002-01-22','candidate49@jobsphere.example','+91-92000-10048','Kochi','Tamil Nadu','B.Tech Computer Science',1.5,350000,600000),
+('Meera','Shah','Female','2003-02-23','candidate50@jobsphere.example','+91-92000-10049','Coimbatore','Karnataka','B.Tech AI & Data Science',2.0,425000,725000),
+('Kavya','Mehta','Male','1994-03-24','candidate51@jobsphere.example','+91-92000-10050','Chennai','Telangana','B.E. Information Technology',2.5,500000,600000),
+('Sneha','Kapoor','Female','1995-04-25','candidate52@jobsphere.example','+91-92000-10051','Bengaluru','Maharashtra','MCA',3.0,575000,725000),
+('Aishwarya','Srinivasan','Male','1996-05-26','candidate53@jobsphere.example','+91-92000-10052','Hyderabad','Delhi','B.Sc Computer Science',3.5,650000,850000),
+('Nandhini','Sharma','Female','1997-06-27','candidate54@jobsphere.example','+91-92000-10053','Pune','Uttar Pradesh','MBA HR',4.0,725000,975000),
+('Divya','Patel','Male','1998-07-01','candidate55@jobsphere.example','+91-92000-10054','Mumbai','Haryana','B.Tech Computer Science',0.0,800000,1100000),
+('Aarav','Kumar','Female','1999-08-02','candidate56@jobsphere.example','+91-92000-10055','Delhi','Kerala','B.Tech AI & Data Science',0.5,875000,975000),
+('Vivaan','Singh','Male','2000-09-03','candidate57@jobsphere.example','+91-92000-10056','Noida','Tamil Nadu','B.E. Information Technology',1.0,950000,1100000),
+('Aditya','Iyer','Female','2001-10-04','candidate58@jobsphere.example','+91-92000-10057','Gurugram','Karnataka','MCA',1.5,1025000,1225000),
+('Arjun','Reddy','Male','2002-11-05','candidate59@jobsphere.example','+91-92000-10058','Kochi','Telangana','B.Sc Computer Science',2.0,1100000,1350000),
+('Rahul','Nair','Female','2003-12-06','candidate60@jobsphere.example','+91-92000-10059','Coimbatore','Maharashtra','MBA HR',2.5,1175000,1475000),
+('Karthik','Menon','Male','1994-01-07','candidate61@jobsphere.example','+91-92000-10060','Chennai','Delhi','B.Tech Computer Science',3.0,350000,450000),
+('Rohan','Gupta','Female','1995-02-08','candidate62@jobsphere.example','+91-92000-10061','Bengaluru','Uttar Pradesh','B.Tech AI & Data Science',3.5,425000,575000),
+('Vikram','Joshi','Male','1996-03-09','candidate63@jobsphere.example','+91-92000-10062','Hyderabad','Haryana','B.E. Information Technology',4.0,500000,700000),
+('Sanjay','Rao','Female','1997-04-10','candidate64@jobsphere.example','+91-92000-10063','Pune','Kerala','MCA',0.0,575000,825000),
+('Naveen','Das','Male','1998-05-11','candidate65@jobsphere.example','+91-92000-10064','Mumbai','Tamil Nadu','B.Sc Computer Science',0.5,650000,950000),
+('Ananya','Mishra','Female','1999-06-12','candidate66@jobsphere.example','+91-92000-10065','Delhi','Karnataka','MBA HR',1.0,725000,825000),
+('Diya','Verma','Male','2000-07-13','candidate67@jobsphere.example','+91-92000-10066','Noida','Telangana','B.Tech Computer Science',1.5,800000,950000),
+('Ishita','Pillai','Female','2001-08-14','candidate68@jobsphere.example','+91-92000-10067','Gurugram','Maharashtra','B.Tech AI & Data Science',2.0,875000,1075000),
+('Priya','Bose','Male','2002-09-15','candidate69@jobsphere.example','+91-92000-10068','Kochi','Delhi','B.E. Information Technology',2.5,950000,1200000),
+('Meera','Shah','Female','2003-10-16','candidate70@jobsphere.example','+91-92000-10069','Coimbatore','Uttar Pradesh','MCA',3.0,1025000,1325000),
+('Kavya','Mehta','Male','1994-11-17','candidate71@jobsphere.example','+91-92000-10070','Chennai','Haryana','B.Sc Computer Science',3.5,1100000,1200000),
+('Sneha','Kapoor','Female','1995-12-18','candidate72@jobsphere.example','+91-92000-10071','Bengaluru','Kerala','MBA HR',4.0,1175000,1325000),
+('Aishwarya','Srinivasan','Male','1996-01-19','candidate73@jobsphere.example','+91-92000-10072','Hyderabad','Tamil Nadu','B.Tech Computer Science',0.0,350000,550000),
+('Nandhini','Sharma','Female','1997-02-20','candidate74@jobsphere.example','+91-92000-10073','Pune','Karnataka','B.Tech AI & Data Science',0.5,425000,675000),
+('Divya','Patel','Male','1998-03-21','candidate75@jobsphere.example','+91-92000-10074','Mumbai','Telangana','B.E. Information Technology',1.0,500000,800000),
+('Aarav','Kumar','Female','1999-04-22','candidate76@jobsphere.example','+91-92000-10075','Delhi','Maharashtra','MCA',1.5,575000,675000),
+('Vivaan','Singh','Male','2000-05-23','candidate77@jobsphere.example','+91-92000-10076','Noida','Delhi','B.Sc Computer Science',2.0,650000,800000),
+('Aditya','Iyer','Female','2001-06-24','candidate78@jobsphere.example','+91-92000-10077','Gurugram','Uttar Pradesh','MBA HR',2.5,725000,925000),
+('Arjun','Reddy','Male','2002-07-25','candidate79@jobsphere.example','+91-92000-10078','Kochi','Haryana','B.Tech Computer Science',3.0,800000,1050000),
+('Rahul','Nair','Female','2003-08-26','candidate80@jobsphere.example','+91-92000-10079','Coimbatore','Kerala','B.Tech AI & Data Science',3.5,875000,1175000),
+('Karthik','Menon','Male','1994-09-27','candidate81@jobsphere.example','+91-92000-10080','Chennai','Tamil Nadu','B.E. Information Technology',4.0,950000,1050000),
+('Rohan','Gupta','Female','1995-10-01','candidate82@jobsphere.example','+91-92000-10081','Bengaluru','Karnataka','MCA',0.0,1025000,1175000),
+('Vikram','Joshi','Male','1996-11-02','candidate83@jobsphere.example','+91-92000-10082','Hyderabad','Telangana','B.Sc Computer Science',0.5,1100000,1300000),
+('Sanjay','Rao','Female','1997-12-03','candidate84@jobsphere.example','+91-92000-10083','Pune','Maharashtra','MBA HR',1.0,1175000,1425000),
+('Naveen','Das','Male','1998-01-04','candidate85@jobsphere.example','+91-92000-10084','Mumbai','Delhi','B.Tech Computer Science',1.5,350000,650000),
+('Ananya','Mishra','Female','1999-02-05','candidate86@jobsphere.example','+91-92000-10085','Delhi','Uttar Pradesh','B.Tech AI & Data Science',2.0,425000,525000),
+('Diya','Verma','Male','2000-03-06','candidate87@jobsphere.example','+91-92000-10086','Noida','Haryana','B.E. Information Technology',2.5,500000,650000),
+('Ishita','Pillai','Female','2001-04-07','candidate88@jobsphere.example','+91-92000-10087','Gurugram','Kerala','MCA',3.0,575000,775000),
+('Priya','Bose','Male','2002-05-08','candidate89@jobsphere.example','+91-92000-10088','Kochi','Tamil Nadu','B.Sc Computer Science',3.5,650000,900000),
+('Meera','Shah','Female','2003-06-09','candidate90@jobsphere.example','+91-92000-10089','Coimbatore','Karnataka','MBA HR',4.0,725000,1025000),
+('Kavya','Mehta','Male','1994-07-10','candidate91@jobsphere.example','+91-92000-10090','Chennai','Telangana','B.Tech Computer Science',0.0,800000,900000),
+('Sneha','Kapoor','Female','1995-08-11','candidate92@jobsphere.example','+91-92000-10091','Bengaluru','Maharashtra','B.Tech AI & Data Science',0.5,875000,1025000),
+('Aishwarya','Srinivasan','Male','1996-09-12','candidate93@jobsphere.example','+91-92000-10092','Hyderabad','Delhi','B.E. Information Technology',1.0,950000,1150000),
+('Nandhini','Sharma','Female','1997-10-13','candidate94@jobsphere.example','+91-92000-10093','Pune','Uttar Pradesh','MCA',1.5,1025000,1275000),
+('Divya','Patel','Male','1998-11-14','candidate95@jobsphere.example','+91-92000-10094','Mumbai','Haryana','B.Sc Computer Science',2.0,1100000,1400000),
+('Aarav','Kumar','Female','1999-12-15','candidate96@jobsphere.example','+91-92000-10095','Delhi','Kerala','MBA HR',2.5,1175000,1275000),
+('Vivaan','Singh','Male','2000-01-16','candidate97@jobsphere.example','+91-92000-10096','Noida','Tamil Nadu','B.Tech Computer Science',3.0,350000,500000),
+('Aditya','Iyer','Female','2001-02-17','candidate98@jobsphere.example','+91-92000-10097','Gurugram','Karnataka','B.Tech AI & Data Science',3.5,425000,625000),
+('Arjun','Reddy','Male','2002-03-18','candidate99@jobsphere.example','+91-92000-10098','Kochi','Telangana','B.E. Information Technology',4.0,500000,750000),
+('Rahul','Nair','Female','2003-04-19','candidate100@jobsphere.example','+91-92000-10099','Coimbatore','Maharashtra','MCA',0.0,575000,875000);
+
+
+CREATE TABLE Skills
+(
+    SkillID INTEGER IDENTITY(1,1),
+    SkillName VARCHAR(100),
+
+    PRIMARY KEY (SkillID)
+);
+
+INSERT INTO Skills (SkillName)
+VALUES
+('SQL'),
+('Python'),
+('Java'),
+('JavaScript'),
+('React'),
+('Angular'),
+('Django'),
+('Power BI'),
+('Excel'),
+('Tableau'),
+('AWS'),
+('Azure'),
+('Snowflake'),
+('Spark'),
+('Machine Learning'),
+('Data Analysis'),
+('Data Engineering'),
+('DevOps'),
+('Cybersecurity'),
+('Git'),
+('SQL - Advanced'),
+('Python - Advanced'),
+('Java - Advanced'),
+('JavaScript - Advanced'),
+('React - Advanced'),
+('Angular - Advanced'),
+('Django - Advanced'),
+('Power BI - Advanced'),
+('Excel - Advanced'),
+('Tableau - Advanced'),
+('AWS - Advanced'),
+('Azure - Advanced'),
+('Snowflake - Advanced'),
+('Spark - Advanced'),
+('Machine Learning - Advanced'),
+('Data Analysis - Advanced'),
+('Data Engineering - Advanced'),
+('DevOps - Advanced'),
+('Cybersecurity - Advanced'),
+('Git - Advanced'),
+('SQL - Advanced - Specialist'),
+('Python - Advanced - Specialist'),
+('Java - Advanced - Specialist'),
+('JavaScript - Advanced - Specialist'),
+('React - Advanced - Specialist'),
+('Angular - Advanced - Specialist'),
+('Django - Advanced - Specialist'),
+('Power BI - Advanced - Specialist'),
+('Excel - Advanced - Specialist'),
+('Tableau - Advanced - Specialist'),
+('AWS - Advanced - Specialist'),
+('Azure - Advanced - Specialist'),
+('Snowflake - Advanced - Specialist'),
+('Spark - Advanced - Specialist'),
+('Machine Learning - Advanced - Specialist'),
+('Data Analysis - Advanced - Specialist'),
+('Data Engineering - Advanced - Specialist'),
+('DevOps - Advanced - Specialist'),
+('Cybersecurity - Advanced - Specialist'),
+('Git - Advanced - Specialist'),
+('SQL - Advanced - Specialist - Professional'),
+('Python - Advanced - Specialist - Professional'),
+('Java - Advanced - Specialist - Professional'),
+('JavaScript - Advanced - Specialist - Professional'),
+('React - Advanced - Specialist - Professional'),
+('Angular - Advanced - Specialist - Professional'),
+('Django - Advanced - Specialist - Professional'),
+('Power BI - Advanced - Specialist - Professional'),
+('Excel - Advanced - Specialist - Professional'),
+('Tableau - Advanced - Specialist - Professional'),
+('AWS - Advanced - Specialist - Professional'),
+('Azure - Advanced - Specialist - Professional'),
+('Snowflake - Advanced - Specialist - Professional'),
+('Spark - Advanced - Specialist - Professional'),
+('Machine Learning - Advanced - Specialist - Professional'),
+('Data Analysis - Advanced - Specialist - Professional'),
+('Data Engineering - Advanced - Specialist - Professional'),
+('DevOps - Advanced - Specialist - Professional'),
+('Cybersecurity - Advanced - Specialist - Professional'),
+('Git - Advanced - Specialist - Professional'),
+('SQL - Advanced - Specialist - Professional - Expert'),
+('Python - Advanced - Specialist - Professional - Expert'),
+('Java - Advanced - Specialist - Professional - Expert'),
+('JavaScript - Advanced - Specialist - Professional - Expert'),
+('React - Advanced - Specialist - Professional - Expert'),
+('Angular - Advanced - Specialist - Professional - Expert'),
+('Django - Advanced - Specialist - Professional - Expert'),
+('Power BI - Advanced - Specialist - Professional - Expert'),
+('Excel - Advanced - Specialist - Professional - Expert'),
+('Tableau - Advanced - Specialist - Professional - Expert'),
+('AWS - Advanced - Specialist - Professional - Expert'),
+('Azure - Advanced - Specialist - Professional - Expert'),
+('Snowflake - Advanced - Specialist - Professional - Expert'),
+('Spark - Advanced - Specialist - Professional - Expert'),
+('Machine Learning - Advanced - Specialist - Professional - Expert'),
+('Data Analysis - Advanced - Specialist - Professional - Expert'),
+('Data Engineering - Advanced - Specialist - Professional - Expert'),
+('DevOps - Advanced - Specialist - Professional - Expert'),
+('Cybersecurity - Advanced - Specialist - Professional - Expert'),
+('Git - Advanced - Specialist - Professional - Expert');
+
+CREATE TABLE CandidateSkills
+(
+    CandidateSkillID INTEGER IDENTITY(1,1),
+    CandidateID INTEGER,
+    SkillID INTEGER,
+    SkillLevel VARCHAR(20),
+
+    PRIMARY KEY (CandidateSkillID)
+);
+
+INSERT INTO CandidateSkills (CandidateID,SkillID,SkillLevel)
+VALUES
+(1,1,'Beginner'),
+(2,2,'Intermediate'),
+(3,3,'Advanced'),
+(4,4,'Expert'),
+(5,5,'Beginner'),
+(6,6,'Intermediate'),
+(7,7,'Advanced'),
+(8,8,'Expert'),
+(9,9,'Beginner'),
+(10,10,'Intermediate'),
+(11,11,'Advanced'),
+(12,12,'Expert'),
+(13,13,'Beginner'),
+(14,14,'Intermediate'),
+(15,15,'Advanced'),
+(16,16,'Expert'),
+(17,17,'Beginner'),
+(18,18,'Intermediate'),
+(19,19,'Advanced'),
+(20,20,'Expert'),
+(21,21,'Beginner'),
+(22,22,'Intermediate'),
+(23,23,'Advanced'),
+(24,24,'Expert'),
+(25,25,'Beginner'),
+(26,26,'Intermediate'),
+(27,27,'Advanced'),
+(28,28,'Expert'),
+(29,29,'Beginner'),
+(30,30,'Intermediate'),
+(31,31,'Advanced'),
+(32,32,'Expert'),
+(33,33,'Beginner'),
+(34,34,'Intermediate'),
+(35,35,'Advanced'),
+(36,36,'Expert'),
+(37,37,'Beginner'),
+(38,38,'Intermediate'),
+(39,39,'Advanced'),
+(40,40,'Expert'),
+(41,41,'Beginner'),
+(42,42,'Intermediate'),
+(43,43,'Advanced'),
+(44,44,'Expert'),
+(45,45,'Beginner'),
+(46,46,'Intermediate'),
+(47,47,'Advanced'),
+(48,48,'Expert'),
+(49,49,'Beginner'),
+(50,50,'Intermediate'),
+(51,51,'Advanced'),
+(52,52,'Expert'),
+(53,53,'Beginner'),
+(54,54,'Intermediate'),
+(55,55,'Advanced'),
+(56,56,'Expert'),
+(57,57,'Beginner'),
+(58,58,'Intermediate'),
+(59,59,'Advanced'),
+(60,60,'Expert'),
+(61,61,'Beginner'),
+(62,62,'Intermediate'),
+(63,63,'Advanced'),
+(64,64,'Expert'),
+(65,65,'Beginner'),
+(66,66,'Intermediate'),
+(67,67,'Advanced'),
+(68,68,'Expert'),
+(69,69,'Beginner'),
+(70,70,'Intermediate'),
+(71,71,'Advanced'),
+(72,72,'Expert'),
+(73,73,'Beginner'),
+(74,74,'Intermediate'),
+(75,75,'Advanced'),
+(76,76,'Expert'),
+(77,77,'Beginner'),
+(78,78,'Intermediate'),
+(79,79,'Advanced'),
+(80,80,'Expert'),
+(81,81,'Beginner'),
+(82,82,'Intermediate'),
+(83,83,'Advanced'),
+(84,84,'Expert'),
+(85,85,'Beginner'),
+(86,86,'Intermediate'),
+(87,87,'Advanced'),
+(88,88,'Expert'),
+(89,89,'Beginner'),
+(90,90,'Intermediate'),
+(91,91,'Advanced'),
+(92,92,'Expert'),
+(93,93,'Beginner'),
+(94,94,'Intermediate'),
+(95,95,'Advanced'),
+(96,96,'Expert'),
+(97,97,'Beginner'),
+(98,98,'Intermediate'),
+(99,99,'Advanced'),
+(100,100,'Expert');
+
+CREATE TABLE Jobs
+(
+    JobID INTEGER IDENTITY(1,1),
+    CompanyID INTEGER,
+    RecruiterID INTEGER,
+    JobTitle VARCHAR(100),
+    JobLocation VARCHAR(100),
+    EmploymentType VARCHAR(50),
+    ExperienceRequired NUMBER(4,1),
+    Salary NUMBER(10,2),
+    Vacancy INTEGER,
+    PostedDate DATE,
+    LastDate DATE,
+
+    PRIMARY KEY (JobID)
+);
+
+INSERT INTO Jobs (CompanyID,RecruiterID,JobTitle,JobLocation,EmploymentType,ExperienceRequired,Salary,Vacancy,PostedDate,LastDate)
+VALUES
+(1,1,'Data Analyst','Chennai','Full-Time',0.0,500000,2,'2026-01-01','2026-01-31'),
+(2,2,'Data Scientist','Bengaluru','Contract',0.5,600000,3,'2026-01-02','2026-02-01'),
+(3,3,'Software Engineer','Hyderabad','Hybrid',1.0,700000,4,'2026-01-03','2026-02-02'),
+(4,4,'SQL Developer','Pune','Remote',1.5,800000,5,'2026-01-04','2026-02-03'),
+(5,5,'Business Analyst','Mumbai','Full-Time',2.0,900000,6,'2026-01-05','2026-02-04'),
+(6,6,'Power BI Developer','Delhi','Contract',2.5,1000000,7,'2026-01-06','2026-02-05'),
+(7,7,'Cloud Engineer','Noida','Hybrid',3.0,1100000,8,'2026-01-07','2026-02-06'),
+(8,8,'Python Developer','Gurugram','Remote',0.0,1200000,9,'2026-01-08','2026-02-07'),
+(9,9,'Full Stack Developer','Kochi','Full-Time',0.5,1300000,10,'2026-01-09','2026-02-08'),
+(10,10,'ML Engineer','Coimbatore','Contract',1.0,1400000,2,'2026-01-10','2026-02-09'),
+(11,11,'Data Engineer','Chennai','Hybrid',1.5,1500000,3,'2026-01-11','2026-02-10'),
+(12,12,'DevOps Engineer','Bengaluru','Remote',2.0,1600000,4,'2026-01-12','2026-02-11'),
+(13,13,'QA Engineer','Hyderabad','Full-Time',2.5,1700000,5,'2026-01-13','2026-02-12'),
+(14,14,'Cybersecurity Analyst','Pune','Contract',3.0,1800000,6,'2026-01-14','2026-02-13'),
+(15,15,'Product Analyst','Mumbai','Hybrid',0.0,1900000,7,'2026-01-15','2026-02-14'),
+(16,16,'Data Analyst','Delhi','Remote',0.5,500000,8,'2026-01-16','2026-02-15'),
+(17,17,'Data Scientist','Noida','Full-Time',1.0,600000,9,'2026-01-17','2026-02-16'),
+(18,18,'Software Engineer','Gurugram','Contract',1.5,700000,10,'2026-01-18','2026-02-17'),
+(19,19,'SQL Developer','Kochi','Hybrid',2.0,800000,2,'2026-01-19','2026-02-18'),
+(20,20,'Business Analyst','Coimbatore','Remote',2.5,900000,3,'2026-01-20','2026-02-19'),
+(21,21,'Power BI Developer','Chennai','Full-Time',3.0,1000000,4,'2026-01-21','2026-02-20'),
+(22,22,'Cloud Engineer','Bengaluru','Contract',0.0,1100000,5,'2026-01-22','2026-02-21'),
+(23,23,'Python Developer','Hyderabad','Hybrid',0.5,1200000,6,'2026-01-23','2026-02-22'),
+(24,24,'Full Stack Developer','Pune','Remote',1.0,1300000,7,'2026-01-24','2026-02-23'),
+(25,25,'ML Engineer','Mumbai','Full-Time',1.5,1400000,8,'2026-01-25','2026-02-24'),
+(26,26,'Data Engineer','Delhi','Contract',2.0,1500000,9,'2026-01-26','2026-02-25'),
+(27,27,'DevOps Engineer','Noida','Hybrid',2.5,1600000,10,'2026-01-27','2026-02-26'),
+(28,28,'QA Engineer','Gurugram','Remote',3.0,1700000,2,'2026-01-28','2026-02-27'),
+(29,29,'Cybersecurity Analyst','Kochi','Full-Time',0.0,1800000,3,'2026-01-29','2026-02-28'),
+(30,30,'Product Analyst','Coimbatore','Contract',0.5,1900000,4,'2026-01-30','2026-03-01'),
+(31,31,'Data Analyst','Chennai','Hybrid',1.0,500000,5,'2026-01-31','2026-03-02'),
+(32,32,'Data Scientist','Bengaluru','Remote',1.5,600000,6,'2026-02-01','2026-03-03'),
+(33,33,'Software Engineer','Hyderabad','Full-Time',2.0,700000,7,'2026-02-02','2026-03-04'),
+(34,34,'SQL Developer','Pune','Contract',2.5,800000,8,'2026-02-03','2026-03-05'),
+(35,35,'Business Analyst','Mumbai','Hybrid',3.0,900000,9,'2026-02-04','2026-03-06'),
+(36,36,'Power BI Developer','Delhi','Remote',0.0,1000000,10,'2026-02-05','2026-03-07'),
+(37,37,'Cloud Engineer','Noida','Full-Time',0.5,1100000,2,'2026-02-06','2026-03-08'),
+(38,38,'Python Developer','Gurugram','Contract',1.0,1200000,3,'2026-02-07','2026-03-09'),
+(39,39,'Full Stack Developer','Kochi','Hybrid',1.5,1300000,4,'2026-02-08','2026-03-10'),
+(40,40,'ML Engineer','Coimbatore','Remote',2.0,1400000,5,'2026-02-09','2026-03-11'),
+(41,41,'Data Engineer','Chennai','Full-Time',2.5,1500000,6,'2026-02-10','2026-03-12'),
+(42,42,'DevOps Engineer','Bengaluru','Contract',3.0,1600000,7,'2026-02-11','2026-03-13'),
+(43,43,'QA Engineer','Hyderabad','Hybrid',0.0,1700000,8,'2026-02-12','2026-03-14'),
+(44,44,'Cybersecurity Analyst','Pune','Remote',0.5,1800000,9,'2026-02-13','2026-03-15'),
+(45,45,'Product Analyst','Mumbai','Full-Time',1.0,1900000,10,'2026-02-14','2026-03-16'),
+(46,46,'Data Analyst','Delhi','Contract',1.5,500000,2,'2026-02-15','2026-03-17'),
+(47,47,'Data Scientist','Noida','Hybrid',2.0,600000,3,'2026-02-16','2026-03-18'),
+(48,48,'Software Engineer','Gurugram','Remote',2.5,700000,4,'2026-02-17','2026-03-19'),
+(49,49,'SQL Developer','Kochi','Full-Time',3.0,800000,5,'2026-02-18','2026-03-20'),
+(50,50,'Business Analyst','Coimbatore','Contract',0.0,900000,6,'2026-02-19','2026-03-21'),
+(51,51,'Power BI Developer','Chennai','Hybrid',0.5,1000000,7,'2026-02-20','2026-03-22'),
+(52,52,'Cloud Engineer','Bengaluru','Remote',1.0,1100000,8,'2026-02-21','2026-03-23'),
+(53,53,'Python Developer','Hyderabad','Full-Time',1.5,1200000,9,'2026-02-22','2026-03-24'),
+(54,54,'Full Stack Developer','Pune','Contract',2.0,1300000,10,'2026-02-23','2026-03-25'),
+(55,55,'ML Engineer','Mumbai','Hybrid',2.5,1400000,2,'2026-02-24','2026-03-26'),
+(56,56,'Data Engineer','Delhi','Remote',3.0,1500000,3,'2026-02-25','2026-03-27'),
+(57,57,'DevOps Engineer','Noida','Full-Time',0.0,1600000,4,'2026-02-26','2026-03-28'),
+(58,58,'QA Engineer','Gurugram','Contract',0.5,1700000,5,'2026-02-27','2026-03-29'),
+(59,59,'Cybersecurity Analyst','Kochi','Hybrid',1.0,1800000,6,'2026-02-28','2026-03-30'),
+(60,60,'Product Analyst','Coimbatore','Remote',1.5,1900000,7,'2026-03-01','2026-03-31'),
+(61,61,'Data Analyst','Chennai','Full-Time',2.0,500000,8,'2026-03-02','2026-04-01'),
+(62,62,'Data Scientist','Bengaluru','Contract',2.5,600000,9,'2026-03-03','2026-04-02'),
+(63,63,'Software Engineer','Hyderabad','Hybrid',3.0,700000,10,'2026-03-04','2026-04-03'),
+(64,64,'SQL Developer','Pune','Remote',0.0,800000,2,'2026-03-05','2026-04-04'),
+(65,65,'Business Analyst','Mumbai','Full-Time',0.5,900000,3,'2026-03-06','2026-04-05'),
+(66,66,'Power BI Developer','Delhi','Contract',1.0,1000000,4,'2026-03-07','2026-04-06'),
+(67,67,'Cloud Engineer','Noida','Hybrid',1.5,1100000,5,'2026-03-08','2026-04-07'),
+(68,68,'Python Developer','Gurugram','Remote',2.0,1200000,6,'2026-03-09','2026-04-08'),
+(69,69,'Full Stack Developer','Kochi','Full-Time',2.5,1300000,7,'2026-03-10','2026-04-09'),
+(70,70,'ML Engineer','Coimbatore','Contract',3.0,1400000,8,'2026-03-11','2026-04-10'),
+(71,71,'Data Engineer','Chennai','Hybrid',0.0,1500000,9,'2026-03-12','2026-04-11'),
+(72,72,'DevOps Engineer','Bengaluru','Remote',0.5,1600000,10,'2026-03-13','2026-04-12'),
+(73,73,'QA Engineer','Hyderabad','Full-Time',1.0,1700000,2,'2026-03-14','2026-04-13'),
+(74,74,'Cybersecurity Analyst','Pune','Contract',1.5,1800000,3,'2026-03-15','2026-04-14'),
+(75,75,'Product Analyst','Mumbai','Hybrid',2.0,1900000,4,'2026-03-16','2026-04-15'),
+(76,76,'Data Analyst','Delhi','Remote',2.5,500000,5,'2026-03-17','2026-04-16'),
+(77,77,'Data Scientist','Noida','Full-Time',3.0,600000,6,'2026-03-18','2026-04-17'),
+(78,78,'Software Engineer','Gurugram','Contract',0.0,700000,7,'2026-03-19','2026-04-18'),
+(79,79,'SQL Developer','Kochi','Hybrid',0.5,800000,8,'2026-03-20','2026-04-19'),
+(80,80,'Business Analyst','Coimbatore','Remote',1.0,900000,9,'2026-03-21','2026-04-20'),
+(81,81,'Power BI Developer','Chennai','Full-Time',1.5,1000000,10,'2026-03-22','2026-04-21'),
+(82,82,'Cloud Engineer','Bengaluru','Contract',2.0,1100000,2,'2026-03-23','2026-04-22'),
+(83,83,'Python Developer','Hyderabad','Hybrid',2.5,1200000,3,'2026-03-24','2026-04-23'),
+(84,84,'Full Stack Developer','Pune','Remote',3.0,1300000,4,'2026-03-25','2026-04-24'),
+(85,85,'ML Engineer','Mumbai','Full-Time',0.0,1400000,5,'2026-03-26','2026-04-25'),
+(86,86,'Data Engineer','Delhi','Contract',0.5,1500000,6,'2026-03-27','2026-04-26'),
+(87,87,'DevOps Engineer','Noida','Hybrid',1.0,1600000,7,'2026-03-28','2026-04-27'),
+(88,88,'QA Engineer','Gurugram','Remote',1.5,1700000,8,'2026-03-29','2026-04-28'),
+(89,89,'Cybersecurity Analyst','Kochi','Full-Time',2.0,1800000,9,'2026-03-30','2026-04-29'),
+(90,90,'Product Analyst','Coimbatore','Contract',2.5,1900000,10,'2026-03-31','2026-04-30'),
+(91,91,'Data Analyst','Chennai','Hybrid',3.0,500000,2,'2026-04-01','2026-05-01'),
+(92,92,'Data Scientist','Bengaluru','Remote',0.0,600000,3,'2026-04-02','2026-05-02'),
+(93,93,'Software Engineer','Hyderabad','Full-Time',0.5,700000,4,'2026-04-03','2026-05-03'),
+(94,94,'SQL Developer','Pune','Contract',1.0,800000,5,'2026-04-04','2026-05-04'),
+(95,95,'Business Analyst','Mumbai','Hybrid',1.5,900000,6,'2026-04-05','2026-05-05'),
+(96,96,'Power BI Developer','Delhi','Remote',2.0,1000000,7,'2026-04-06','2026-05-06'),
+(97,97,'Cloud Engineer','Noida','Full-Time',2.5,1100000,8,'2026-04-07','2026-05-07'),
+(98,98,'Python Developer','Gurugram','Contract',3.0,1200000,9,'2026-04-08','2026-05-08'),
+(99,99,'Full Stack Developer','Kochi','Hybrid',0.0,1300000,10,'2026-04-09','2026-05-09'),
+(100,100,'ML Engineer','Coimbatore','Remote',0.5,1400000,2,'2026-04-10','2026-05-10');
+
+
+CREATE TABLE Applications
+(
+    ApplicationID INTEGER IDENTITY(1,1),
+    CandidateID INTEGER,
+    JobID INTEGER,
+    ApplicationDate DATE,
+    Status VARCHAR(50),
+
+    PRIMARY KEY (ApplicationID)
+);
+
+INSERT INTO Applications (CandidateID,JobID,ApplicationDate,Status)
+VALUES
+(1,1,'2026-02-01','Applied'),
+(2,8,'2026-02-02','Shortlisted'),
+(3,15,'2026-02-03','Interview Scheduled'),
+(4,22,'2026-02-04','Selected'),
+(5,29,'2026-02-05','Rejected'),
+(6,36,'2026-02-06','On Hold'),
+(7,43,'2026-02-07','Applied'),
+(8,50,'2026-02-08','Shortlisted'),
+(9,57,'2026-02-09','Interview Scheduled'),
+(10,64,'2026-02-10','Selected'),
+(11,71,'2026-02-11','Rejected'),
+(12,78,'2026-02-12','On Hold'),
+(13,85,'2026-02-13','Applied'),
+(14,92,'2026-02-14','Shortlisted'),
+(15,99,'2026-02-15','Interview Scheduled'),
+(16,6,'2026-02-16','Selected'),
+(17,13,'2026-02-17','Rejected'),
+(18,20,'2026-02-18','On Hold'),
+(19,27,'2026-02-19','Applied'),
+(20,34,'2026-02-20','Shortlisted'),
+(21,41,'2026-02-21','Interview Scheduled'),
+(22,48,'2026-02-22','Selected'),
+(23,55,'2026-02-23','Rejected'),
+(24,62,'2026-02-24','On Hold'),
+(25,69,'2026-02-25','Applied'),
+(26,76,'2026-02-26','Shortlisted'),
+(27,83,'2026-02-27','Interview Scheduled'),
+(28,90,'2026-02-28','Selected'),
+(29,97,'2026-03-01','Rejected'),
+(30,4,'2026-03-02','On Hold'),
+(31,11,'2026-03-03','Applied'),
+(32,18,'2026-03-04','Shortlisted'),
+(33,25,'2026-03-05','Interview Scheduled'),
+(34,32,'2026-03-06','Selected'),
+(35,39,'2026-03-07','Rejected'),
+(36,46,'2026-03-08','On Hold'),
+(37,53,'2026-03-09','Applied'),
+(38,60,'2026-03-10','Shortlisted'),
+(39,67,'2026-03-11','Interview Scheduled'),
+(40,74,'2026-03-12','Selected'),
+(41,81,'2026-03-13','Rejected'),
+(42,88,'2026-03-14','On Hold'),
+(43,95,'2026-03-15','Applied'),
+(44,2,'2026-03-16','Shortlisted'),
+(45,9,'2026-03-17','Interview Scheduled'),
+(46,16,'2026-03-18','Selected'),
+(47,23,'2026-03-19','Rejected'),
+(48,30,'2026-03-20','On Hold'),
+(49,37,'2026-03-21','Applied'),
+(50,44,'2026-03-22','Shortlisted'),
+(51,51,'2026-03-23','Interview Scheduled'),
+(52,58,'2026-03-24','Selected'),
+(53,65,'2026-03-25','Rejected'),
+(54,72,'2026-03-26','On Hold'),
+(55,79,'2026-03-27','Applied'),
+(56,86,'2026-03-28','Shortlisted'),
+(57,93,'2026-03-29','Interview Scheduled'),
+(58,100,'2026-03-30','Selected'),
+(59,7,'2026-03-31','Rejected'),
+(60,14,'2026-04-01','On Hold'),
+(61,21,'2026-04-02','Applied'),
+(62,28,'2026-04-03','Shortlisted'),
+(63,35,'2026-04-04','Interview Scheduled'),
+(64,42,'2026-04-05','Selected'),
+(65,49,'2026-04-06','Rejected'),
+(66,56,'2026-04-07','On Hold'),
+(67,63,'2026-04-08','Applied'),
+(68,70,'2026-04-09','Shortlisted'),
+(69,77,'2026-04-10','Interview Scheduled'),
+(70,84,'2026-04-11','Selected'),
+(71,91,'2026-04-12','Rejected'),
+(72,98,'2026-04-13','On Hold'),
+(73,5,'2026-04-14','Applied'),
+(74,12,'2026-04-15','Shortlisted'),
+(75,19,'2026-04-16','Interview Scheduled'),
+(76,26,'2026-04-17','Selected'),
+(77,33,'2026-04-18','Rejected'),
+(78,40,'2026-04-19','On Hold'),
+(79,47,'2026-04-20','Applied'),
+(80,54,'2026-04-21','Shortlisted'),
+(81,61,'2026-04-22','Interview Scheduled'),
+(82,68,'2026-04-23','Selected'),
+(83,75,'2026-04-24','Rejected'),
+(84,82,'2026-04-25','On Hold'),
+(85,89,'2026-04-26','Applied'),
+(86,96,'2026-04-27','Shortlisted'),
+(87,3,'2026-04-28','Interview Scheduled'),
+(88,10,'2026-04-29','Selected'),
+(89,17,'2026-04-30','Rejected'),
+(90,24,'2026-05-01','On Hold'),
+(91,31,'2026-05-02','Applied'),
+(92,38,'2026-05-03','Shortlisted'),
+(93,45,'2026-05-04','Interview Scheduled'),
+(94,52,'2026-05-05','Selected'),
+(95,59,'2026-05-06','Rejected'),
+(96,66,'2026-05-07','On Hold'),
+(97,73,'2026-05-08','Applied'),
+(98,80,'2026-05-09','Shortlisted'),
+(99,87,'2026-05-10','Interview Scheduled'),
+(100,94,'2026-05-11','Selected');
+CREATE TABLE Interviews
+(
+    InterviewID INTEGER IDENTITY(1,1),
+    ApplicationID INTEGER,
+    InterviewDate DATE,
+    InterviewType VARCHAR(50),
+    InterviewStatus VARCHAR(50),
+
+    PRIMARY KEY (InterviewID)
+);
+
+INSERT INTO Interviews (ApplicationID,InterviewDate,InterviewType,InterviewStatus)
+VALUES
+(1,'2026-03-01','Technical','Scheduled'),
+(2,'2026-03-02','HR','Completed'),
+(3,'2026-03-03','Managerial','Cancelled'),
+(4,'2026-03-04','Panel','Rescheduled'),
+(5,'2026-03-05','Coding','Scheduled'),
+(6,'2026-03-06','Technical','Completed'),
+(7,'2026-03-07','HR','Cancelled'),
+(8,'2026-03-08','Managerial','Rescheduled'),
+(9,'2026-03-09','Panel','Scheduled'),
+(10,'2026-03-10','Coding','Completed'),
+(11,'2026-03-11','Technical','Cancelled'),
+(12,'2026-03-12','HR','Rescheduled'),
+(13,'2026-03-13','Managerial','Scheduled'),
+(14,'2026-03-14','Panel','Completed'),
+(15,'2026-03-15','Coding','Cancelled'),
+(16,'2026-03-16','Technical','Rescheduled'),
+(17,'2026-03-17','HR','Scheduled'),
+(18,'2026-03-18','Managerial','Completed'),
+(19,'2026-03-19','Panel','Cancelled'),
+(20,'2026-03-20','Coding','Rescheduled'),
+(21,'2026-03-21','Technical','Scheduled'),
+(22,'2026-03-22','HR','Completed'),
+(23,'2026-03-23','Managerial','Cancelled'),
+(24,'2026-03-24','Panel','Rescheduled'),
+(25,'2026-03-25','Coding','Scheduled'),
+(26,'2026-03-26','Technical','Completed'),
+(27,'2026-03-27','HR','Cancelled'),
+(28,'2026-03-28','Managerial','Rescheduled'),
+(29,'2026-03-29','Panel','Scheduled'),
+(30,'2026-03-30','Coding','Completed'),
+(31,'2026-03-31','Technical','Cancelled'),
+(32,'2026-04-01','HR','Rescheduled'),
+(33,'2026-04-02','Managerial','Scheduled'),
+(34,'2026-04-03','Panel','Completed'),
+(35,'2026-04-04','Coding','Cancelled'),
+(36,'2026-04-05','Technical','Rescheduled'),
+(37,'2026-04-06','HR','Scheduled'),
+(38,'2026-04-07','Managerial','Completed'),
+(39,'2026-04-08','Panel','Cancelled'),
+(40,'2026-04-09','Coding','Rescheduled'),
+(41,'2026-04-10','Technical','Scheduled'),
+(42,'2026-04-11','HR','Completed'),
+(43,'2026-04-12','Managerial','Cancelled'),
+(44,'2026-04-13','Panel','Rescheduled'),
+(45,'2026-04-14','Coding','Scheduled'),
+(46,'2026-04-15','Technical','Completed'),
+(47,'2026-04-16','HR','Cancelled'),
+(48,'2026-04-17','Managerial','Rescheduled'),
+(49,'2026-04-18','Panel','Scheduled'),
+(50,'2026-04-19','Coding','Completed'),
+(51,'2026-04-20','Technical','Cancelled'),
+(52,'2026-04-21','HR','Rescheduled'),
+(53,'2026-04-22','Managerial','Scheduled'),
+(54,'2026-04-23','Panel','Completed'),
+(55,'2026-04-24','Coding','Cancelled'),
+(56,'2026-04-25','Technical','Rescheduled'),
+(57,'2026-04-26','HR','Scheduled'),
+(58,'2026-04-27','Managerial','Completed'),
+(59,'2026-04-28','Panel','Cancelled'),
+(60,'2026-04-29','Coding','Rescheduled'),
+(61,'2026-04-30','Technical','Scheduled'),
+(62,'2026-05-01','HR','Completed'),
+(63,'2026-05-02','Managerial','Cancelled'),
+(64,'2026-05-03','Panel','Rescheduled'),
+(65,'2026-05-04','Coding','Scheduled'),
+(66,'2026-05-05','Technical','Completed'),
+(67,'2026-05-06','HR','Cancelled'),
+(68,'2026-05-07','Managerial','Rescheduled'),
+(69,'2026-05-08','Panel','Scheduled'),
+(70,'2026-05-09','Coding','Completed'),
+(71,'2026-05-10','Technical','Cancelled'),
+(72,'2026-05-11','HR','Rescheduled'),
+(73,'2026-05-12','Managerial','Scheduled'),
+(74,'2026-05-13','Panel','Completed'),
+(75,'2026-05-14','Coding','Cancelled'),
+(76,'2026-05-15','Technical','Rescheduled'),
+(77,'2026-05-16','HR','Scheduled'),
+(78,'2026-05-17','Managerial','Completed'),
+(79,'2026-05-18','Panel','Cancelled'),
+(80,'2026-05-19','Coding','Rescheduled'),
+(81,'2026-05-20','Technical','Scheduled'),
+(82,'2026-05-21','HR','Completed'),
+(83,'2026-05-22','Managerial','Cancelled'),
+(84,'2026-05-23','Panel','Rescheduled'),
+(85,'2026-05-24','Coding','Scheduled'),
+(86,'2026-05-25','Technical','Completed'),
+(87,'2026-05-26','HR','Cancelled'),
+(88,'2026-05-27','Managerial','Rescheduled'),
+(89,'2026-05-28','Panel','Scheduled'),
+(90,'2026-05-29','Coding','Completed'),
+(91,'2026-05-30','Technical','Cancelled'),
+(92,'2026-05-31','HR','Rescheduled'),
+(93,'2026-06-01','Managerial','Scheduled'),
+(94,'2026-06-02','Panel','Completed'),
+(95,'2026-06-03','Coding','Cancelled'),
+(96,'2026-06-04','Technical','Rescheduled'),
+(97,'2026-06-05','HR','Scheduled'),
+(98,'2026-06-06','Managerial','Completed'),
+(99,'2026-06-07','Panel','Cancelled'),
+(100,'2026-06-08','Coding','Rescheduled');
+
+CREATE TABLE InterviewFeedback
+(
+    FeedbackID INTEGER IDENTITY(1,1),
+    InterviewID INTEGER,
+    TechnicalScore NUMBER(5,2),
+    CommunicationScore NUMBER(5,2),
+    OverallScore NUMBER(5,2),
+    Remarks VARCHAR(300),
+
+    PRIMARY KEY (FeedbackID)
+);
+
+INSERT INTO InterviewFeedback (InterviewID,TechnicalScore,CommunicationScore,OverallScore,Remarks)
+VALUES
+(1,55,50,52.5,'Strong technical fundamentals'),
+(2,62,55,58.5,'Good communication'),
+(3,69,60,64.5,'Needs deeper SQL knowledge'),
+(4,76,65,70.5,'Excellent problem solving'),
+(5,83,70,76.5,'Good overall performance'),
+(6,90,75,82.5,'Strong analytical thinking'),
+(7,97,80,88.5,'Good teamwork'),
+(8,58,85,71.5,'Needs improvement in communication'),
+(9,65,90,77.5,'Strong technical fundamentals'),
+(10,72,95,83.5,'Good communication'),
+(11,79,100,89.5,'Needs deeper SQL knowledge'),
+(12,86,54,70.0,'Excellent problem solving'),
+(13,93,59,76.0,'Good overall performance'),
+(14,100,64,82.0,'Strong analytical thinking'),
+(15,61,69,65.0,'Good teamwork'),
+(16,68,74,71.0,'Needs improvement in communication'),
+(17,75,79,77.0,'Strong technical fundamentals'),
+(18,82,84,83.0,'Good communication'),
+(19,89,89,89.0,'Needs deeper SQL knowledge'),
+(20,96,94,95.0,'Excellent problem solving'),
+(21,57,99,78.0,'Good overall performance'),
+(22,64,53,58.5,'Strong analytical thinking'),
+(23,71,58,64.5,'Good teamwork'),
+(24,78,63,70.5,'Needs improvement in communication'),
+(25,85,68,76.5,'Strong technical fundamentals'),
+(26,92,73,82.5,'Good communication'),
+(27,99,78,88.5,'Needs deeper SQL knowledge'),
+(28,60,83,71.5,'Excellent problem solving'),
+(29,67,88,77.5,'Good overall performance'),
+(30,74,93,83.5,'Strong analytical thinking'),
+(31,81,98,89.5,'Good teamwork'),
+(32,88,52,70.0,'Needs improvement in communication'),
+(33,95,57,76.0,'Strong technical fundamentals'),
+(34,56,62,59.0,'Good communication'),
+(35,63,67,65.0,'Needs deeper SQL knowledge'),
+(36,70,72,71.0,'Excellent problem solving'),
+(37,77,77,77.0,'Good overall performance'),
+(38,84,82,83.0,'Strong analytical thinking'),
+(39,91,87,89.0,'Good teamwork'),
+(40,98,92,95.0,'Needs improvement in communication'),
+(41,59,97,78.0,'Strong technical fundamentals'),
+(42,66,51,58.5,'Good communication'),
+(43,73,56,64.5,'Needs deeper SQL knowledge'),
+(44,80,61,70.5,'Excellent problem solving'),
+(45,87,66,76.5,'Good overall performance'),
+(46,94,71,82.5,'Strong analytical thinking'),
+(47,55,76,65.5,'Good teamwork'),
+(48,62,81,71.5,'Needs improvement in communication'),
+(49,69,86,77.5,'Strong technical fundamentals'),
+(50,76,91,83.5,'Good communication'),
+(51,83,96,89.5,'Needs deeper SQL knowledge'),
+(52,90,50,70.0,'Excellent problem solving'),
+(53,97,55,76.0,'Good overall performance'),
+(54,58,60,59.0,'Strong analytical thinking'),
+(55,65,65,65.0,'Good teamwork'),
+(56,72,70,71.0,'Needs improvement in communication'),
+(57,79,75,77.0,'Strong technical fundamentals'),
+(58,86,80,83.0,'Good communication'),
+(59,93,85,89.0,'Needs deeper SQL knowledge'),
+(60,100,90,95.0,'Excellent problem solving'),
+(61,61,95,78.0,'Good overall performance'),
+(62,68,100,84.0,'Strong analytical thinking'),
+(63,75,54,64.5,'Good teamwork'),
+(64,82,59,70.5,'Needs improvement in communication'),
+(65,89,64,76.5,'Strong technical fundamentals'),
+(66,96,69,82.5,'Good communication'),
+(67,57,74,65.5,'Needs deeper SQL knowledge'),
+(68,64,79,71.5,'Excellent problem solving'),
+(69,71,84,77.5,'Good overall performance'),
+(70,78,89,83.5,'Strong analytical thinking'),
+(71,85,94,89.5,'Good teamwork'),
+(72,92,99,95.5,'Needs improvement in communication'),
+(73,99,53,76.0,'Strong technical fundamentals'),
+(74,60,58,59.0,'Good communication'),
+(75,67,63,65.0,'Needs deeper SQL knowledge'),
+(76,74,68,71.0,'Excellent problem solving'),
+(77,81,73,77.0,'Good overall performance'),
+(78,88,78,83.0,'Strong analytical thinking'),
+(79,95,83,89.0,'Good teamwork'),
+(80,56,88,72.0,'Needs improvement in communication'),
+(81,63,93,78.0,'Strong technical fundamentals'),
+(82,70,98,84.0,'Good communication'),
+(83,77,52,64.5,'Needs deeper SQL knowledge'),
+(84,84,57,70.5,'Excellent problem solving'),
+(85,91,62,76.5,'Good overall performance'),
+(86,98,67,82.5,'Strong analytical thinking'),
+(87,59,72,65.5,'Good teamwork'),
+(88,66,77,71.5,'Needs improvement in communication'),
+(89,73,82,77.5,'Strong technical fundamentals'),
+(90,80,87,83.5,'Good communication'),
+(91,87,92,89.5,'Needs deeper SQL knowledge'),
+(92,94,97,95.5,'Excellent problem solving'),
+(93,55,51,53.0,'Good overall performance'),
+(94,62,56,59.0,'Strong analytical thinking'),
+(95,69,61,65.0,'Good teamwork'),
+(96,76,66,71.0,'Needs improvement in communication'),
+(97,83,71,77.0,'Strong technical fundamentals'),
+(98,90,76,83.0,'Good communication'),
+(99,97,81,89.0,'Needs deeper SQL knowledge'),
+(100,58,86,72.0,'Excellent problem solving');
+
+
+CREATE TABLE Offers
+(
+    OfferID INTEGER IDENTITY(1,1),
+    CandidateID INTEGER,
+    JobID INTEGER,
+    OfferDate DATE,
+    OfferedSalary NUMBER(10,2),
+    JoiningDate DATE,
+    OfferStatus VARCHAR(50),
+
+    PRIMARY KEY (OfferID)
+);
+
+SELECT * FROM Offers;
+
+INSERT INTO Offers (CandidateID,JobID,OfferDate,OfferedSalary,JoiningDate,OfferStatus)
+VALUES
+(1,1,'2026-04-01',600000,'2026-05-01','Accepted'),
+(2,8,'2026-04-02',700000,'2026-05-03','Pending'),
+(3,15,'2026-04-03',800000,'2026-05-05','Declined'),
+(4,22,'2026-04-04',900000,'2026-05-07','Withdrawn'),
+(5,29,'2026-04-05',1000000,'2026-05-09','Accepted'),
+(6,36,'2026-04-06',1100000,'2026-05-11','Pending'),
+(7,43,'2026-04-07',1200000,'2026-05-13','Declined'),
+(8,50,'2026-04-08',1300000,'2026-05-15','Withdrawn'),
+(9,57,'2026-04-09',1400000,'2026-05-17','Accepted'),
+(10,64,'2026-04-10',1500000,'2026-05-19','Pending'),
+(11,71,'2026-04-11',1600000,'2026-05-21','Declined'),
+(12,78,'2026-04-12',1700000,'2026-05-23','Withdrawn'),
+(13,85,'2026-04-13',1800000,'2026-05-25','Accepted'),
+(14,92,'2026-04-14',1900000,'2026-05-27','Pending'),
+(15,99,'2026-04-15',2000000,'2026-05-29','Declined'),
+(16,6,'2026-04-16',2100000,'2026-05-31','Withdrawn'),
+(17,13,'2026-04-17',2200000,'2026-06-02','Accepted'),
+(18,20,'2026-04-18',2300000,'2026-06-04','Pending'),
+(19,27,'2026-04-19',2400000,'2026-06-06','Declined'),
+(20,34,'2026-04-20',2500000,'2026-06-08','Withdrawn'),
+(21,41,'2026-04-21',600000,'2026-06-10','Accepted'),
+(22,48,'2026-04-22',700000,'2026-06-12','Pending'),
+(23,55,'2026-04-23',800000,'2026-06-14','Declined'),
+(24,62,'2026-04-24',900000,'2026-06-16','Withdrawn'),
+(25,69,'2026-04-25',1000000,'2026-06-18','Accepted'),
+(26,76,'2026-04-26',1100000,'2026-06-20','Pending'),
+(27,83,'2026-04-27',1200000,'2026-06-22','Declined'),
+(28,90,'2026-04-28',1300000,'2026-06-24','Withdrawn'),
+(29,97,'2026-04-29',1400000,'2026-06-26','Accepted'),
+(30,4,'2026-04-30',1500000,'2026-06-28','Pending'),
+(31,11,'2026-05-01',1600000,'2026-05-31','Declined'),
+(32,18,'2026-05-02',1700000,'2026-06-02','Withdrawn'),
+(33,25,'2026-05-03',1800000,'2026-06-04','Accepted'),
+(34,32,'2026-05-04',1900000,'2026-06-06','Pending'),
+(35,39,'2026-05-05',2000000,'2026-06-08','Declined'),
+(36,46,'2026-05-06',2100000,'2026-06-10','Withdrawn'),
+(37,53,'2026-05-07',2200000,'2026-06-12','Accepted'),
+(38,60,'2026-05-08',2300000,'2026-06-14','Pending'),
+(39,67,'2026-05-09',2400000,'2026-06-16','Declined'),
+(40,74,'2026-05-10',2500000,'2026-06-18','Withdrawn'),
+(41,81,'2026-05-11',600000,'2026-06-20','Accepted'),
+(42,88,'2026-05-12',700000,'2026-06-22','Pending'),
+(43,95,'2026-05-13',800000,'2026-06-24','Declined'),
+(44,2,'2026-05-14',900000,'2026-06-26','Withdrawn'),
+(45,9,'2026-05-15',1000000,'2026-06-28','Accepted'),
+(46,16,'2026-05-16',1100000,'2026-06-30','Pending'),
+(47,23,'2026-05-17',1200000,'2026-07-02','Declined'),
+(48,30,'2026-05-18',1300000,'2026-07-04','Withdrawn'),
+(49,37,'2026-05-19',1400000,'2026-07-06','Accepted'),
+(50,44,'2026-05-20',1500000,'2026-07-08','Pending'),
+(51,51,'2026-05-21',1600000,'2026-07-10','Declined'),
+(52,58,'2026-05-22',1700000,'2026-07-12','Withdrawn'),
+(53,65,'2026-05-23',1800000,'2026-07-14','Accepted'),
+(54,72,'2026-05-24',1900000,'2026-07-16','Pending'),
+(55,79,'2026-05-25',2000000,'2026-07-18','Declined'),
+(56,86,'2026-05-26',2100000,'2026-07-20','Withdrawn'),
+(57,93,'2026-05-27',2200000,'2026-07-22','Accepted'),
+(58,100,'2026-05-28',2300000,'2026-07-24','Pending'),
+(59,7,'2026-05-29',2400000,'2026-07-26','Declined'),
+(60,14,'2026-05-30',2500000,'2026-07-28','Withdrawn'),
+(61,21,'2026-05-31',600000,'2026-06-30','Accepted'),
+(62,28,'2026-06-01',700000,'2026-07-02','Pending'),
+(63,35,'2026-06-02',800000,'2026-07-04','Declined'),
+(64,42,'2026-06-03',900000,'2026-07-06','Withdrawn'),
+(65,49,'2026-06-04',1000000,'2026-07-08','Accepted'),
+(66,56,'2026-06-05',1100000,'2026-07-10','Pending'),
+(67,63,'2026-06-06',1200000,'2026-07-12','Declined'),
+(68,70,'2026-06-07',1300000,'2026-07-14','Withdrawn'),
+(69,77,'2026-06-08',1400000,'2026-07-16','Accepted'),
+(70,84,'2026-06-09',1500000,'2026-07-18','Pending'),
+(71,91,'2026-06-10',1600000,'2026-07-20','Declined'),
+(72,98,'2026-06-11',1700000,'2026-07-22','Withdrawn'),
+(73,5,'2026-06-12',1800000,'2026-07-24','Accepted'),
+(74,12,'2026-06-13',1900000,'2026-07-26','Pending'),
+(75,19,'2026-06-14',2000000,'2026-07-28','Declined'),
+(76,26,'2026-06-15',2100000,'2026-07-30','Withdrawn'),
+(77,33,'2026-06-16',2200000,'2026-08-01','Accepted'),
+(78,40,'2026-06-17',2300000,'2026-08-03','Pending'),
+(79,47,'2026-06-18',2400000,'2026-08-05','Declined'),
+(80,54,'2026-06-19',2500000,'2026-08-07','Withdrawn'),
+(81,61,'2026-06-20',600000,'2026-08-09','Accepted'),
+(82,68,'2026-06-21',700000,'2026-08-11','Pending'),
+(83,75,'2026-06-22',800000,'2026-08-13','Declined'),
+(84,82,'2026-06-23',900000,'2026-08-15','Withdrawn'),
+(85,89,'2026-06-24',1000000,'2026-08-17','Accepted'),
+(86,96,'2026-06-25',1100000,'2026-08-19','Pending'),
+(87,3,'2026-06-26',1200000,'2026-08-21','Declined'),
+(88,10,'2026-06-27',1300000,'2026-08-23','Withdrawn'),
+(89,17,'2026-06-28',1400000,'2026-08-25','Accepted'),
+(90,24,'2026-06-29',1500000,'2026-08-27','Pending'),
+(91,31,'2026-06-30',1600000,'2026-07-30','Declined'),
+(92,38,'2026-07-01',1700000,'2026-08-01','Withdrawn'),
+(93,45,'2026-07-02',1800000,'2026-08-03','Accepted'),
+(94,52,'2026-07-03',1900000,'2026-08-05','Pending'),
+(95,59,'2026-07-04',2000000,'2026-08-07','Declined'),
+(96,66,'2026-07-05',2100000,'2026-08-09','Withdrawn'),
+(97,73,'2026-07-06',2200000,'2026-08-11','Accepted'),
+(98,80,'2026-07-07',2300000,'2026-08-13','Pending'),
+(99,87,'2026-07-08',2400000,'2026-08-15','Declined'),
+(100,94,'2026-07-09',2500000,'2026-08-17','Withdrawn');
+
+SHOW TABLES;
+
+SELECT COUNT(*) AS Total_Companies
+FROM Companies;
+SELECT COUNT(*) AS Total_Recruiters
+FROM Recruiters;
+SELECT COUNT(*) AS Total_Candidates
+FROM Candidates;
+SELECT COUNT(*) AS Total_Skills
+FROM Skills;
+SELECT COUNT(*) AS Total_Jobs
+FROM Jobs;
+SELECT COUNT(*) AS Total_Applications
+FROM Applications;
+SELECT COUNT(*) AS Total_Interviews
+FROM Interviews;
+SELECT COUNT(*) AS Total_Feedback
+FROM InterviewFeedback;
+SELECT COUNT(*) AS Total_Offers
+FROM Offers;
+
+SELECT * FROM Candidates;
+
+SELECT
+    CandidateID,
+    FirstName,
+    LastName,
+    City,
+    HighestQualification
+FROM Candidates;
+
+SELECT * FROM Candidates LIMIT 10;
+
+SELECT DISTINCT City FROM Candidates;
+
+SELECT DISTINCT HighestQualification FROM Candidates;
+
+SELECT * FROM Candidates WHERE City = 'Chennai';
+
+SELECT * FROM Candidates WHERE City = 'Bengaluru';
+
+SELECT
+    CandidateID,
+    FirstName,
+    LastName,
+    ExperienceYears
+FROM Candidates
+WHERE ExperienceYears > 3;
+
+SELECT
+    CandidateID,
+    FirstName,
+    LastName,
+    ExpectedSalary
+FROM Candidates
+WHERE ExpectedSalary > 800000;
+
+SELECT * FROM Candidates WHERE City = 'Chennai'
+AND ExperienceYears > 2;
+
+SELECT * FROM Candidates WHERE City = 'Chennai'
+OR City = 'Bengaluru';
+
+SELECT * FROM Candidates WHERE City <> 'Chennai';
+
+SELECT * FROM Candidates
+WHERE City IN ('Chennai','Bengaluru','Hyderabad');
+
+SELECT * FROM Candidates
+WHERE ExperienceYears BETWEEN 2 AND 5;
+
+SELECT * FROM Candidates
+WHERE ExpectedSalary BETWEEN 600000 AND 1000000;
+
+SELECT * FROM Candidates
+WHERE FirstName LIKE 'A%';
+
+SELECT * FROM Candidates
+WHERE FirstName LIKE '%a';
+
+SELECT * FROM Candidates
+WHERE FirstName ILIKE '%an%'; ## ILIKE performs case sensitive matching ##
+
+## Highest Expected Salary
+SELECT
+    FirstName,
+    LastName,
+    ExpectedSalary
+FROM Candidates
+ORDER BY ExpectedSalary DESC;
+
+## Lowest Expected salary
+SELECT
+    FirstName,
+    LastName,
+    ExpectedSalary
+FROM Candidates
+ORDER BY ExpectedSalary ASC;
+
+## Most experienced candidates
+SELECT
+    FirstName,
+    LastName,
+    ExperienceYears
+FROM Candidates
+ORDER BY ExperienceYears DESC;
+
+SELECT COUNT(*) AS TotalCandidates
+FROM Candidates;
+
+SELECT AVG(ExperienceYears) AS AverageExperience
+FROM Candidates;
+
+SELECT MAX(ExpectedSalary) AS MaximumExpectedSalary
+FROM Candidates;
+
+SELECT MIN(ExpectedSalary) AS MinimumExpectedSalary
+FROM Candidates;
+
+SELECT SUM(ExpectedSalary) AS TotalExpectedSalary
+FROM Candidates;
+
+Candidates by city
+SELECT
+    City,
+    COUNT(*) AS CandidateCount
+FROM Candidates
+GROUP BY City
+ORDER BY CandidateCount DESC;
+
+## Candidates by qualification
+SELECT
+    HighestQualification,
+    COUNT(*) AS CandidateCount
+FROM Candidates
+GROUP BY HighestQualification
+ORDER BY CandidateCount DESC;
+
+## Average salary by city
+SELECT
+    City,
+    AVG(ExpectedSalary) AS AverageExpectedSalary
+FROM Candidates
+GROUP BY City
+ORDER BY AverageExpectedSalary DESC;
+
+SELECT
+    City,
+    COUNT(*) AS CandidateCount
+FROM Candidates
+GROUP BY City
+HAVING COUNT(*) > 3;
+
+## Experience classification
+SELECT
+    CandidateID,
+    FirstName,
+    LastName,
+    ExperienceYears,
+    CASE
+        WHEN ExperienceYears = 0 THEN 'Fresher'
+        WHEN ExperienceYears <= 2 THEN 'Junior'
+        WHEN ExperienceYears <= 5 THEN 'Mid-Level'
+        ELSE 'Senior'
+    END AS ExperienceLevel
+FROM Candidates;
+
+## Salary Classification 
+SELECT
+    CandidateID,
+    FirstName,
+    ExpectedSalary,
+    CASE
+        WHEN ExpectedSalary < 500000 THEN 'Low'
+        WHEN ExpectedSalary < 800000 THEN 'Medium'
+        WHEN ExpectedSalary < 1200000 THEN 'High'
+        ELSE 'Premium'
+    END AS SalaryCategory
+FROM Candidates;
+
+## Joins -- Candidate + Applications
+SELECT
+    c.CandidateID,
+    c.FirstName,
+    c.LastName,
+    a.ApplicationID,
+    a.ApplicationDate,
+    a.Status
+FROM Candidates c
+INNER JOIN Applications a
+    ON c.CandidateID = a.CandidateID;
+
+## --Applicadtions + Jobs
+SELECT
+    a.ApplicationID,
+    a.CandidateID,
+    j.JobTitle,
+    j.JobLocation,
+    a.Status
+FROM Applications a
+INNER JOIN Jobs j
+    ON a.JobID = j.JobID;
+
+## -- Jobs + Companies
+SELECT
+    j.JobID,
+    j.JobTitle,
+    c.CompanyName,
+    j.JobLocation,
+    j.Salary
+FROM Jobs j
+INNER JOIN Companies c
+    ON j.CompanyID = c.CompanyID;
+
+## -- Jobs + Recruiters
+SELECT
+    j.JobID,
+    j.JobTitle,
+    r.FirstName,
+    r.LastName,
+    r.Designation
+FROM Jobs j
+INNER JOIN Recruiters r
+    ON j.RecruiterID = r.RecruiterID;
+
+## -- Candidate - Application - Job - Company
+SELECT
+    c.FirstName,
+    c.LastName,
+    j.JobTitle,
+    comp.CompanyName,
+    j.JobLocation,
+    a.Status
+FROM Applications a
+JOIN Candidates c
+    ON a.CandidateID = c.CandidateID
+JOIN Jobs j
+    ON a.JobID = j.JobID
+JOIN Companies comp
+    ON j.CompanyID = comp.CompanyID;
+
+
+SELECT
+    Status,
+    COUNT(*) AS ApplicationCount
+FROM Applications
+GROUP BY Status
+ORDER BY ApplicationCount DESC;
+
+SELECT COUNT(*) AS SelectedCandidates
+FROM Applications
+WHERE Status = 'Selected';
+
+SELECT COUNT(*) AS RejectedCandidates
+FROM Applications
+WHERE Status = 'Rejected';
+
+SELECT COUNT(*) AS ShortlistedCandidates
+FROM Applications
+WHERE Status = 'Shortlisted';
+
+## Interview Analysis
+## --Interview by type
+SELECT
+    InterviewType,
+    COUNT(*) AS TotalInterviews
+FROM Interviews
+GROUP BY InterviewType;
+
+## -- Interview by status
+SELECT
+    InterviewStatus,
+    COUNT(*) AS TotalInterviews
+FROM Interviews
+GROUP BY InterviewStatus;
+
+SELECT
+    AVG(TechnicalScore) AS AverageTechnicalScore
+FROM InterviewFeedback;
+
+SELECT
+    AVG(CommunicationScore) AS AverageCommunicationScore
+FROM InterviewFeedback;
+
+## -- Top interview Performers
+SELECT
+    InterviewID,
+    TechnicalScore,
+    CommunicationScore,
+    OverallScore
+FROM InterviewFeedback
+ORDER BY OverallScore DESC
+LIMIT 10;
+
+## Offer Analysis
+## -- Total Offers
+SELECT COUNT(*) AS TotalOffers
+FROM Offers;
+
+## Offers by status
+SELECT
+    OfferStatus,
+    COUNT(*) AS OfferCount
+FROM Offers
+GROUP BY OfferStatus;
+
+SELECT
+    AVG(OfferedSalary) AS AverageOfferedSalary
+FROM Offers;
+
+SELECT
+    MAX(OfferedSalary) AS HighestOfferedSalary
+FROM Offers;
+
+## Subqueries
+## -- Candidate with highest expected salary
+SELECT *
+FROM Candidates
+WHERE ExpectedSalary = (
+    SELECT MAX(ExpectedSalary)
+    FROM Candidates
+);
+
+## Candidates earning above average expected salary
+SELECT
+    CandidateID,
+    FirstName,
+    LastName,
+    ExpectedSalary
+FROM Candidates
+WHERE ExpectedSalary > (
+    SELECT AVG(ExpectedSalary)
+    FROM Candidates
+);
+
+## Candidates above average salary
+WITH SalaryStats AS
+(
+    SELECT AVG(ExpectedSalary) AS AvgSalary
+    FROM Candidates
+)
+SELECT
+    c.CandidateID,
+    c.FirstName,
+    c.LastName,
+    c.ExpectedSalary
+FROM Candidates c
+CROSS JOIN SalaryStats s
+WHERE c.ExpectedSalary > s.AvgSalary;
+
+## Window Functions
+SELECT
+    CandidateID,
+    FirstName,
+    LastName,
+    ExpectedSalary,
+    ROW_NUMBER() OVER (
+        ORDER BY ExpectedSalary DESC
+    ) AS SalaryRank
+FROM Candidates;
+
+SELECT
+    CandidateID,
+    FirstName,
+    LastName,
+    ExpectedSalary,
+    RANK() OVER (
+        ORDER BY ExpectedSalary DESC
+    ) AS SalaryRank
+FROM Candidates;
+
+SELECT
+    CandidateID,
+    FirstName,
+    LastName,
+    ExpectedSalary,
+    DENSE_RANK() OVER (
+        ORDER BY ExpectedSalary DESC
+    ) AS SalaryRank
+FROM Candidates;
+
+## --Rank candidates by city
+SELECT
+    CandidateID,
+    FirstName,
+    LastName,
+    City,
+    ExpectedSalary,
+    RANK() OVER (
+        PARTITION BY City
+        ORDER BY ExpectedSalary DESC
+    ) AS CitySalaryRank
+FROM Candidates;
+
+## --Top candidate in each city
+WITH RankedCandidates AS
+(
+    SELECT
+        CandidateID,
+        FirstName,
+        LastName,
+        City,
+        ExpectedSalary,
+        ROW_NUMBER() OVER (
+            PARTITION BY City
+            ORDER BY ExpectedSalary DESC
+        ) AS rn
+    FROM Candidates
+)
+SELECT *
+FROM RankedCandidates
+WHERE rn = 1;
+
+SELECT
+    CandidateID,
+    FirstName,
+    ExpectedSalary,
+    LAG(ExpectedSalary) OVER (
+        ORDER BY CandidateID
+    ) AS PreviousSalary,
+    LEAD(ExpectedSalary) OVER (
+        ORDER BY CandidateID
+    ) AS NextSalary
+FROM Candidates;
+
+## --Applications by month
+SELECT
+    DATE_TRUNC('MONTH', ApplicationDate) AS ApplicationMonth,
+    COUNT(*) AS Applications
+FROM Applications
+GROUP BY DATE_TRUNC('MONTH', ApplicationDate)
+ORDER BY ApplicationMonth;
+
+SELECT *
+FROM Applications
+WHERE YEAR(ApplicationDate) = 2026;
+
+SELECT *
+FROM Interviews
+WHERE MONTH(InterviewDate) = 3;
+
+## --Full candidate name 
+SELECT
+    CONCAT(FirstName, ' ', LastName) AS FullName
+FROM Candidates;
+
+## --Uppercase name
+SELECT
+    UPPER(FirstName) AS FirstName
+FROM Candidates;
+
+## -- Lowercase emails
+SELECT
+    LOWER(Email) AS Email
+FROM Candidates;
+
+## --Duplicate emails
+SELECT
+    Email,
+    COUNT(*) AS EmailCount
+FROM Candidates
+GROUP BY Email
+HAVING COUNT(*) > 0;
+
+SELECT * FROM Candidates WHERE Email IS NULL;
+SELECT * FROM Candidates WHERE Phone IS NULL;
+
+SELECT COUNT(*) AS TotalCandidates
+FROM Candidates;
+SELECT COUNT(*) AS TotalJobs
+FROM Jobs;
+SELECT COUNT(*) AS TotalApplications
+FROM Applications;
+SELECT COUNT(*) AS TotalInterviews
+FROM Interviews;
+SELECT COUNT(*) AS TotalOffers
+FROM Offers;
+
+## -- Selection rate
+SELECT
+    ROUND(
+        100.0 * SUM(
+            CASE WHEN Status = 'Selected' THEN 1 ELSE 0 END
+        ) / COUNT(*),
+        2
+    ) AS SelectionRate
+FROM Applications;
+
+## -- Rejection rate
+SELECT
+    ROUND(
+        100.0 * SUM(
+            CASE WHEN Status = 'Rejected' THEN 1 ELSE 0 END
+        ) / COUNT(*),
+        2
+    ) AS RejectionRate
+FROM Applications;
+
+## --Recruiter performance
+SELECT
+    r.RecruiterID,
+    r.FirstName,
+    r.LastName,
+    COUNT(j.JobID) AS JobsPosted
+FROM Recruiters r
+LEFT JOIN Jobs j
+    ON r.RecruiterID = j.RecruiterID
+GROUP BY
+    r.RecruiterID,
+    r.FirstName,
+    r.LastName
+ORDER BY JobsPosted DESC;
+
+## -- Company Performance
+SELECT
+    c.CompanyID,
+    c.CompanyName,
+    COUNT(j.JobID) AS TotalJobs,
+    SUM(j.Vacancy) AS TotalVacancies,
+    AVG(j.Salary) AS AverageSalary
+FROM Companies c
+LEFT JOIN Jobs j
+    ON c.CompanyID = j.CompanyID
+GROUP BY
+    c.CompanyID,
+    c.CompanyName
+ORDER BY TotalJobs DESC;
+
+## Most Popular Job Roles
+SELECT
+    j.JobTitle,
+    COUNT(a.ApplicationID) AS Applications
+FROM Jobs j
+LEFT JOIN Applications a
+    ON j.JobID = a.JobID
+GROUP BY j.JobTitle
+ORDER BY Applications DESC;
+
+CREATE OR REPLACE VIEW CandidateOverview AS
+SELECT
+    CandidateID,
+    CONCAT(FirstName, ' ', LastName) AS FullName,
+    City,
+    State,
+    HighestQualification,
+    ExperienceYears,
+    CurrentSalary,
+    ExpectedSalary
+FROM Candidates;
+
+SELECT * FROM CandidateOverview;
+
+CREATE OR REPLACE VIEW JobOverview AS
+SELECT
+    j.JobID,
+    j.JobTitle,
+    c.CompanyName,
+    j.JobLocation,
+    j.EmploymentType,
+    j.ExperienceRequired,
+    j.Salary,
+    j.Vacancy,
+    j.PostedDate,
+    j.LastDate
+FROM Jobs j
+JOIN Companies c
+    ON j.CompanyID = c.CompanyID;
+
+CREATE OR REPLACE VIEW RecruitmentDashboard AS
+SELECT
+    a.ApplicationID,
+    CONCAT(c.FirstName, ' ', c.LastName) AS CandidateName,
+    j.JobTitle,
+    comp.CompanyName,
+    a.ApplicationDate,
+    a.Status
+FROM Applications a
+JOIN Candidates c
+    ON a.CandidateID = c.CandidateID
+JOIN Jobs j
+    ON a.JobID = j.JobID
+JOIN Companies comp
+    ON j.CompanyID = comp.CompanyID;
+
+SELECT * FROM RecruitmentDashboard;
+
+SELECT
+    c.CandidateID,
+    CONCAT(c.FirstName, ' ', c.LastName) AS CandidateName,
+    j.JobTitle,
+    a.Status AS ApplicationStatus,
+    i.InterviewType,
+    i.InterviewStatus,
+    f.TechnicalScore,
+    f.CommunicationScore,
+    f.OverallScore
+FROM Candidates c
+JOIN Applications a
+    ON c.CandidateID = a.CandidateID
+JOIN Jobs j
+    ON a.JobID = j.JobID
+JOIN Interviews i
+    ON a.ApplicationID = i.ApplicationID
+JOIN InterviewFeedback f
+    ON i.InterviewID = f.InterviewID;
+
+SELECT
+    c.CandidateID,
+    CONCAT(c.FirstName, ' ', c.LastName) AS CandidateName,
+    AVG(f.OverallScore) AS AverageInterviewScore
+FROM Candidates c
+JOIN Applications a
+    ON c.CandidateID = a.CandidateID
+JOIN Interviews i
+    ON a.ApplicationID = i.ApplicationID
+JOIN InterviewFeedback f
+    ON i.InterviewID = f.InterviewID
+GROUP BY
+    c.CandidateID,
+    c.FirstName,
+    c.LastName
+ORDER BY AverageInterviewScore DESC
+LIMIT 10;
+
+SELECT
+    ROUND(
+        100.0 *
+        SUM(CASE WHEN OfferStatus = 'Accepted' THEN 1 ELSE 0 END)
+        / COUNT(*),
+        2
+    ) AS OfferAcceptanceRate
+FROM Offers;
+
+SELECT
+    c.CompanyName,
+    AVG(o.OfferedSalary) AS AverageOfferedSalary
+FROM Offers o
+JOIN Jobs j
+    ON o.JobID = j.JobID
+JOIN Companies c
+    ON j.CompanyID = c.CompanyID
+GROUP BY c.CompanyName
+ORDER BY AverageOfferedSalary DESC;
+
+SELECT
+    s.SkillName,
+    COUNT(cs.CandidateSkillID) AS CandidateCount
+FROM Skills s
+JOIN CandidateSkills cs
+    ON s.SkillID = cs.SkillID
+GROUP BY s.SkillName
+ORDER BY CandidateCount DESC;
+
+SELECT MAX(ExpectedSalary) AS SecondHighestSalary
+FROM Candidates
+WHERE ExpectedSalary < (
+    SELECT MAX(ExpectedSalary)
+    FROM Candidates
+);
+
+SELECT ExpectedSalary
+FROM
+(
+    SELECT
+        ExpectedSalary,
+        DENSE_RANK() OVER (
+            ORDER BY ExpectedSalary DESC
+        ) AS SalaryRank
+    FROM Candidates
+)
+WHERE SalaryRank = 3;
+
+## --Highest salary by city
+SELECT
+    City,
+    MAX(ExpectedSalary) AS HighestExpectedSalary
+FROM Candidates
+GROUP BY City
+ORDER BY HighestExpectedSalary DESC;
+
+## -- Candidates without applications
+SELECT
+    c.CandidateID,
+    c.FirstName,
+    c.LastName
+FROM Candidates c
+LEFT JOIN Applications a
+    ON c.CandidateID = a.CandidateID
+WHERE a.ApplicationID IS NULL;
+
+##--Jobs Without applications
+SELECT
+    j.JobID,
+    j.JobTitle,
+    j.JobLocation
+FROM Jobs j
+LEFT JOIN Applications a
+    ON j.JobID = a.JobID
+WHERE a.ApplicationID IS NULL;
+
+## --Recruitment Funnel report
+SELECT
+    COUNT(*) AS TotalApplications,
+
+    SUM(
+        CASE WHEN Status = 'Shortlisted'
+        THEN 1 ELSE 0 END
+    ) AS Shortlisted,
+
+    SUM(
+        CASE WHEN Status = 'Interview Scheduled'
+        THEN 1 ELSE 0 END
+    ) AS Interviews,
+
+    SUM(
+        CASE WHEN Status = 'Selected'
+        THEN 1 ELSE 0 END
+    ) AS Selected,
+
+    SUM(
+        CASE WHEN Status = 'Rejected'
+        THEN 1 ELSE 0 END
+    ) AS Rejected
+
+FROM Applications;
+
+## --Final Project KPI
+SELECT
+    (SELECT COUNT(*) FROM Companies) AS TotalCompanies,
+
+    (SELECT COUNT(*) FROM Recruiters) AS TotalRecruiters,
+
+    (SELECT COUNT(*) FROM Candidates) AS TotalCandidates,
+
+    (SELECT COUNT(*) FROM Jobs) AS TotalJobs,
+
+    (SELECT COUNT(*) FROM Applications) AS TotalApplications,
+
+    (SELECT COUNT(*) FROM Interviews) AS TotalInterviews,
+
+    (SELECT COUNT(*) FROM Offers) AS TotalOffers,
+
+    (
+        SELECT COUNT(*)
+        FROM Applications
+        WHERE Status = 'Selected'
+    ) AS SelectedCandidates,
+
+    (
+        SELECT COUNT(*)
+        FROM Offers
+        WHERE OfferStatus = 'Accepted'
+    ) AS AcceptedOffers;
